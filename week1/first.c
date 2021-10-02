@@ -1,7 +1,7 @@
 // this is a first program in C.
 #include <stdio.h>
 
-int main(){
+int main() {
 	printf("Hello World!\n");
 	return 0;
 }
