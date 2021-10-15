@@ -1,7 +1,10 @@
-#Option 1
+**Option**
+
 gcc min.c main.c // compiles both files to ./a.out
 
-#Option 2
+
+**Option 2**
+
 gcc -c min.c // compiles but not link min.c
 
 gcc -c main.c // compiles but not link main.c
