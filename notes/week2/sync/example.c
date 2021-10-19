@@ -1,8 +1,27 @@
 #include <stdio.h>
+#include "header.h"
 
 int globalVar;
-runForLoopExample()
+void runForLoopExample(int userInput)
 {
+    for (int counter = 0; counter <= userInput; counter++)
+    {
+        if (counter > 2 && counter < 5)
+        {
+            continue;
+        }
+        printf("for loop counter =%d.\n", counter);
+        if (counter > 3)
+            break; //breaking out of loop because...
+    }
+    printf("globalVar in forloop = %d\n", globalVar++);
+}
+
+void showStatic(void)
+{
+    static int staticVar;
+    printf("staticVar = %d\n", staticVar);
+    staticVar += 25;
 }
 
 int main()
@@ -11,6 +30,8 @@ int main()
     char userChar;
     int funcRet;
     int counter;
+    int arrayEx[] = {1, 2, 3, 4, 5};
+    globalVar = 0;
     printf("Enter an integer value: \n");
     funcRet = scanf("%d", &userInput);
     if (funcRet == 1)
@@ -61,17 +82,13 @@ int main()
     {
         printf("Do while counter = %d.\n", --counter);
     } while (counter > 0);
-
-    for (counter = 0; counter <= userInput; ++counter)
-    {
-        if (counter > 2 && counter < 5)
-        {
-            continue;
-        }
-        printf("for loop counter =%d.\n", counter);
-        if (counter > 3)
-            break; //breaking out of loop because...
-    }
+    runForLoopExample(userInput);
     printf("After for loop counter = %d.\n", counter);
+    printf("After for loop, globalVar = %d\n", globalVar++);
+
+    showStatic();
+    showStatic();
+
+    PrintArray(arrayEx, 5);
     return 0;
 }

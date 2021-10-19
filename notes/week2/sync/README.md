@@ -2,7 +2,7 @@
 ## Controls
 ### Sync Class
 
-**If statements**
+## if statements
 Only the line following the if statment will be part of the conditional.
 ```
 if (test)
@@ -28,12 +28,12 @@ true=1
 false=0
 ```
 
-**Switch Statements**
+## Switch Statements
 %c for char
 
 If you don't include the break statement, the switch will continue to the other cases.
 
-**While**
+## While
 
 ```
 while (something is true){
@@ -48,10 +48,10 @@ while (counter < threshold)
     change counter
 }
 ```
- **do while**
+ ## do while
  Will always happen at least once!
 
- **for loops**
+ ## for loops
  3 parts:
  1. Initialization 
     - if declared within the for initialization, only exists within that scope.
@@ -62,12 +62,32 @@ while (counter < threshold)
  ```
 for(initialization; condition;update)
  ```
- **break**
+ ## break
  You can break out of loops; If you break in a loop, good idea to put a comment in.
- **continue**
+ ## continue
  You've hit a condition - you don't want to keep going so you can restart (go to update).
- **goto**
+ ## goto
  goto some label - DO NOT USE PLEASE
  __makes spaghetti__
 
- **functions**
+ ## functions
+ void is the key for C - I;ve though about it and I don't want to use anything
+
+ ```
+returnType functionName(inputType variableName){
+    return 
+}
+ ```
+ functions are great because you only have to change the codeblock within the function in one place.
+
+## variable scoping
+ - __block scope__ If it is defined in a block, it is only available within the block.
+ - __global scope__ Defined outside blockscope - can be used wherever
+
+## static variable
+ Maintains value through execution!
+Declaration only takes place one time.
+
+## header files
+- provided libraries use #include<>
+- user defined header files use #include ""
