@@ -2,7 +2,7 @@
 
 *example.c*\
 *header.h*\
-*exampleFunction.c*\
+*exampleFunction.c*
 
 ## if statements
 Only the line following the if statment will be part of the conditional.
