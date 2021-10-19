@@ -20,7 +20,7 @@ if (test){
 ```
 __example.c__
 including {} around **if** statements does not change compiler output if the block statement isn't changed or the scope of the variable definitions isn't changed.
-**Chech this out** - check the size of the compiled output of a test file.
+**Chech this out** - check the size of the compiled output of a test file. __They are the same size - see test1.c vs test2.c sizes__
 
 If statements __should__ be true/false. They don't have to be - 5 would evaluate true.
 ```
