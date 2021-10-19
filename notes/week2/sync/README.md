@@ -1,6 +1,4 @@
-# Week 2
-## Controls
-### Sync Class
+# Week 2 - Controls
 
 ## if statements
 Only the line following the if statment will be part of the conditional.
