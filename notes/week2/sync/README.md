@@ -1,5 +1,9 @@
 # Week 2 - Controls
 
+*example.c*/
+*header.h*/
+*exampleFunction.c*/
+
 ## if statements
 Only the line following the if statment will be part of the conditional.
 ```
@@ -16,9 +20,9 @@ if (test){
     printf("This is statemtn #2 \n");
 }
 ```
-__example.c__
+
 including {} around **if** statements does not change compiler output if the block statement isn't changed or the scope of the variable definitions isn't changed.\
-**Chech this out** - check the size of the compiled output of a test file. __They are the same size - see test1.c vs test2.c sizes__
+**Chech this out** - check the size of the compiled output of a test file.*They are the same size - see test1.c vs test2.c sizes*
 
 If statements __should__ be true/false. They don't have to be - 5 would evaluate true.
 ```
