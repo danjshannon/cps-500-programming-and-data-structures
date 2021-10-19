@@ -1,8 +1,8 @@
 # Week 2 - Controls
 
-*example.c*/
-*header.h*/
-*exampleFunction.c*/
+*example.c*\
+*header.h*\
+*exampleFunction.c*\
 
 ## if statements
 Only the line following the if statment will be part of the conditional.
