@@ -23,7 +23,9 @@ _stack.c_
 4. Area grows/shrinks
 5. Typically requires operating system support
 
+```
 int *array = malloc(sizeof(int) *20);
+```
 
 **Data**
 1. Contains static initialzed variables, global varables, static local variables.
@@ -41,7 +43,7 @@ int main(){
 1. Readonly
 2. size doesn't change
 3. Contains executable machine instructions
-4. can be shared if running multiple times
+4. Can be shared if running multiple times
 
 Only instructions go into text segment
 
