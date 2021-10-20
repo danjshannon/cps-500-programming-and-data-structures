@@ -12,12 +12,14 @@
 int * ptr;
 ```
 memory
+```
 ------
 |*   |ptr--
 ------     |
 |10  |x<---
 ------
 |    |
+```
 
 ## Referencing
 - The "&" operator *references* a variable
@@ -36,22 +38,23 @@ int* ptr = &x; //ptr variable points to x
 *ptr = 5; //now x=5, ptr is unchanged
 ```
 memory
+```
 ------
 |*   |ptr--
 ------     |
 |10  |x<---
 ------
 |    |
-
+```
 *ptr = 5;
-
+```
 ------
 |*   |ptr--
 ------     |
 |5   |x<---
 ------
 |    |
-
+```
 ## Pointer example program
 *pointer.c*
 
