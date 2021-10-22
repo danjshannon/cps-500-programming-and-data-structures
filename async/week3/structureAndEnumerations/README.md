@@ -12,7 +12,7 @@ struct struct_name{
 
 - **example**
 ```C
-stuct Student{
+struct Student{
     char name[20];
     char course[20];
     float GPA;
