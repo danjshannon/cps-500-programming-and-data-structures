@@ -129,7 +129,7 @@ free(ptr); //free the address of the ptr on the heap
 - calling free on a NULL ptr will crash the program
 - calling free on a non-heap-allocated address _may_ crash the program.
 
-*what happens here?*
+**what happens here?**
 ```
 int *x = malloc(100 * sizeof(int));
 x = NULL;
