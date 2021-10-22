@@ -111,24 +111,24 @@ int main()
 - **syntax** enum enum_name {id_1,id_2,...,id_n};
 - **example**
 ```C
-enum Direction {NORTH,SOUTH,EAST,WEST};
+enum Direction {NORTH, EAST, SOUTH, WEST};
 enum Direction dir = EAST;
 ```
 - Again, we can use typedef:
 ```C
-typedef enum direction {NORTH, SOUTH, EAST, WEST} directoin;
+typedef enum direction {NORTH, EAST, SOUTH, WEST} directoin;
 Direction dir = EAST;
 ```
 
 ## Enumerations and Integers
 - Behind the scenes enumarations are just integers
 ```C
-enum Direcatoin {NORTH, SOUTH, EAST, WEST};
-//NORTH=0, SOUTH=1,EAST=2,WEST=3
+enum Direcatoin {NORTH, EAST, SOUTH, WEST};
+//NORTH=0, EAST=1,SOUTH=2,WEST=3
 ```
 - We can manually specify the integer values:
 ```C
-enum Direction {NORTH=1, SOUTH=3, EAST=5, WEST=};
+enum Direction {NORTH=1, EAST=3, SOUTH=5, WEST=7};
 ```
 
 - Enumerated types can be implicitly cast to integers:
@@ -138,3 +138,8 @@ printf("Dir: %d\n",dir);
 ```
 _enumerations.c_ - cannot get this to compile!
 - depending on your comipler, you may need to explicitly cast in the other direction.
+
+```C
+int x=1;
+Direction d = (Direction)x;
+```
