@@ -136,7 +136,7 @@ enum Direction {NORTH=1, EAST=3, SOUTH=5, WEST=7};
 enum Direction dir=NORTH;
 printf("Dir: %d\n",dir);
 ```
-_enumerations.c_ - cannot get this to compile!
+[_enumerations.c_](https://github.com/danjshannon/cps-500-programming-and-data-structures/blob/main/async/week3/structureAndEnumerations/enumerations.c) - cannot get this to compile!
 - depending on your comipler, you may need to explicitly cast in the other direction.
 
 ```C
