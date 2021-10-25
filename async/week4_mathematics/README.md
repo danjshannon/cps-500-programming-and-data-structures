@@ -16,7 +16,7 @@
 - Biconditional:     p&#10231;q
 
 ## Not Truth Table
-p==T, &not;p==F/
+p==T, &not;p==F\
 p==F, &not;p==T
 
 ## Conjunction "and"
