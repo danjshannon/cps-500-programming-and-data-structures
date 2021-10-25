@@ -20,24 +20,24 @@ p==T | &not;p==F\
 p==F | &not;p==T
 
 ## Conjunction "and"
-p==T | q==T | p&and;q==T
-p==T | q==F | p&and;q==F
-p==F | q==T | p&and;q==F
-p==F | q==F | p&and;q==F
+p==T | q==T | p&and;q==T\
+p==T | q==F | p&and;q==F\
+p==F | q==T | p&and;q==F\
+p==F | q==F | p&and;q==F\
 - Today is monday **and** it is raining
 - There is no partially true in propositional logic.
 
 ## Disjunction "or"
-p==T | q==T | p&or;q==T
-p==T | q==F | p&or;q==T
-p==F | q==T | p&or;q==T
-p==F | q==F | p&or;q==F
+p==T | q==T | p&or;q==T\
+p==T | q==F | p&or;q==T\
+p==F | q==T | p&or;q==T\
+p==F | q==F | p&or;q==F\
 - Today is monday **or** today is friday
 - Today is monday **or** it is raining
 
 ## Exclusive or
-p==T | q==T | p&rarr;q==T
-p==T | q==F | p&rarr;q==F
-p==F | q==T | p&rarr;q==T
-p==F | q==F | p&rarr;q==T
+p==T | q==T | p&rarr;q==T\
+p==T | q==F | p&rarr;q==F\
+p==F | q==T | p&rarr;q==T\
+p==F | q==F | p&rarr;q==T\
 
