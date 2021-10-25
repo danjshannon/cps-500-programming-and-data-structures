@@ -8,5 +8,15 @@
 
 ## Compound Propostions
 
-- Negation (not): &not;p
-- Conjuction (and): p&and;q
+- Negation (not):    &not;p
+- Conjuction (and):  p&and;q
+- Disjunction (or):  p&or;q
+- Exclusive or:      p&oplus;q
+- Implication:       p&rarr;q
+- Biconditional:     p&#10231;q
+
+## Not Truth Table
+p==T, &not;p==F/
+p==F, &not;p==T
+
+## Conjunction "and"
