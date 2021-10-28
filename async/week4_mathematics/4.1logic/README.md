@@ -1,4 +1,4 @@
-# Logic
+# 4.1 Logic
 *May not use this stuff this term, but it will be important for later in the degree.*
 ## Propositional Logic
 - A statement that has a truth value.
