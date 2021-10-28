@@ -44,7 +44,9 @@
 ## Universal Quantifiers
 - Represented by and upside-down A: &forall;
   - It means "for all"
-**Let P(x)=x+1>x**/
+
+**Let P(x)=x+1>x**
+
 - We can state the following:
   - &forall;x P(x)
   - For all values of x, P(x) is true
