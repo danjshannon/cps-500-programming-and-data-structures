@@ -54,7 +54,9 @@
 
 - Let the universe be the real umbers.
   - Then &forall;x P(x) is true
-**Let P(x)=x/2<x**/
+
+**Let P(x)=x/2<x**
+
   - not true for negative numbers!
   - Thus, &forall;xP(x) is false
 - In order to prove that a universal quantification is true, it must be shown for **all** cases
@@ -80,16 +82,22 @@ for (x=1;x<=10;x++){
 ## Existential Quantifications
 - Represented by a backwards 'E': &exist;
   - It means "there exists"
-**Let P(x)=x+1>x**/
+
+**Let P(x)=x+1>x**
+
 - We can state the following:
   - &exist;x P(x)
   - There exists a value of x such that P(x) is true
   - For at least one value of x, x+1>x is true
 - You still have to specify your univers
-**Let P(x)=x+1<x**/
+
+**Let P(x)=x+1<x**
+
   - There is no numerical value x for which x+1<x
   - Thus, &exist;x P(x) is false
-**Let P(x)=x+1>x**/
+
+**Let P(x)=x+1>x**
+
   - There is a numerical value x for which x+1>x
   - Thus, &exist;x P(x) is true
 
