@@ -1,4 +1,4 @@
-# Runtime Analysis
+# 5.1 Runtime Analysis
 
 ## How to measure algorithm speed
 - **option 1** implement the algorithm and instrument to measure how long it takes.

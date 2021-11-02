@@ -1,4 +1,4 @@
-# Proportional Rates of Growth
+# 5.2 Proportional Rates of Growth
 ## Big-O
 
 O(g(n))={f(n):there exists (&exist;) positive constances c and n<sub>0</sub> such that 0&le;f(n)&le;c*g(n),for all n&ge;n<sub>0</sub>}
