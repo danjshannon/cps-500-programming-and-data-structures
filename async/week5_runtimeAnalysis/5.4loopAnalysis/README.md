@@ -47,4 +47,6 @@ for (int i =1;i<N;i*=3){
     - for( int j=0; j<i; j++)
     - |i=0|/1=O(i)...?
       - we want O(n) not O(i)
-    - 
+    - ![Runtime Table](https://github.com/danjshannon/cps-500-programming-and-data-structures/blob/main/async/week5_runtimeAnalysis/5.4loopAnalysis/loopAnalysisTable.png)
+    - sum &sum; the last column - geomoetry summation
+  - O(N)
