@@ -75,7 +75,7 @@
 - week 3
   - pointers
   - arrays
-  - structions and enumerations
+  - structures and enumerations
 - week 4
   - probability
   - sequence and summations
