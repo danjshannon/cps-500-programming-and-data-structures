@@ -41,7 +41,7 @@ int search(int* array, int size, in value){
 
 ## Binary Search
 ```C
-int binarySearch(int * array. int value, int lo, int hi){
+int binarySearch(int * array, int value, int lo, int hi){
     if(lo>hi){
         return -1;
     }
@@ -72,7 +72,7 @@ int binarySearch(int * array. int value, int lo, int hi){
   - Merge the result from the two recursive calls into a sorted result.
 
 ```C
-void mergeSort(int[] array, int left, int right){
+void mergeSort(int array[], int left, int right){
     if(left<right){
         int middle =left+(right-left)/2;
         mergeSort(array,left,middle);
@@ -81,7 +81,7 @@ void mergeSort(int[] array, int left, int right){
     }
 }
 
-void merge(int[] array, int left, int middle, int right){
+void merge(int array[], int left, int middle, int right){
     int temp[right-left];
     int i=left;
     int j=middle;
@@ -125,7 +125,7 @@ void merge(int[] array, int left, int middle, int right){
 - Recursively reapply the algorithm to the left and right sublists now
 
 ```C
-void quickSort(int [] array, int low, int high){
+void quickSort(int array[], int low, int high){
     if(low<high){
         int p = partition(array,low,high);
         quickSort(array,low,p-1);
@@ -134,7 +134,7 @@ void quickSort(int [] array, int low, int high){
 }
 ```
 ```C
-int partition(int[] array, int low, int high){
+int partition(int array[], int low, int high){
     int pivot = array[high];
     int i= low-1;
     for(int j=low;j<high;j++){
