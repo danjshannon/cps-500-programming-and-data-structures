@@ -1,5 +1,5 @@
 # Week 7 Arrays, List, Queues, and Stacks
-[7.1 Arrays Revisited](## 7.1 Arrays Revisited)
+[7.1 Arrays Revisited](#71-arrays-revisited)
 
 ## 7.1 Arrays Revisited
 
