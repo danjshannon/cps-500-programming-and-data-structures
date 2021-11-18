@@ -22,12 +22,12 @@ void merge(int array[], int left, int middle, int right)
         if (array[i] < array[j])
         {
             temp[index] = array[i];
-            i++
+            i++;
         }
         else
         {
             temp[index] = array[j];
-            j++
+            j++;
         }
         index++;
     }
@@ -50,4 +50,5 @@ void merge(int array[], int left, int middle, int right)
 }
 int main()
 {
+    return 0;
 }

@@ -1,4 +1,4 @@
-# Week 6: Recursion
+# Week 6 Recursion
 - [6.1 Recursion](##61-recursion)
 - [6.2 Factorial Example](##62-Factorial-Example)
 - [6.3 GCD Example](##63-GCD-Example)
