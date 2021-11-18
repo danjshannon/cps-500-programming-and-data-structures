@@ -1,4 +1,5 @@
-## Week 5: Runtime Analysis
+# Week 5: Runtime Analysis
+- [Home](https://github.com/danjshannon/cps-500-programming-and-data-structures#cps-500-data-structures)
 - [5.1 Runtime Analysis](#51-Runtime-Analysis)
 - [5.2 Proportional Rates of Growth](#52-Proportional-Rates-of-Growth)
 - [5.3 Limit Rule](#53-Limit-Rule)

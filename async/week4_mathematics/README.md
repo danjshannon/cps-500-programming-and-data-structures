@@ -1,4 +1,5 @@
 # Week 4: Mathematics
+- [Home](https://github.com/danjshannon/cps-500-programming-and-data-structures#cps-500-data-structures)
 - [4.1 Logic](#41-Logic)
 - [4.2 Set Theory](#42-set-theory)
 - [4.3 Predicate Logic](#43-predicate-logic)

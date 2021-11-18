@@ -1,4 +1,5 @@
 # Week 3: Memory
+- [Home](https://github.com/danjshannon/cps-500-programming-and-data-structures#cps-500-data-structures)
 - [3.1 Memory](#31-memory)
 - [3.2 Pointers](#32-pointers)
 - [3.3 Arrays](#33-arrays)
