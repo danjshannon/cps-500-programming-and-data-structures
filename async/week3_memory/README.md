@@ -1,12 +1,12 @@
 # Week 3: Memory
-- [3.1 Memory](#31-memory)
-- [3.2 Pointers](#32-pointers)
-- [3.3 Arrays](#33-arrays)
-- [3.4 Structures and Enumerations](#34-structures-and-enumerations)
+- [3.1 Memory](##31-memory)
+- [3.2 Pointers](##32-pointers)
+- [3.3 Arrays](##33-arrays)
+- [3.4 Structures and Enumerations](##34-structures-and-enumerations)
 
-# 3.1 Memory
-[top](#week-3-memory)
-**Program Memory**
+## 3.1 Memory
+[top](##week-3-memory)
+### Program Memory
 - Every program has memory associated with it to store all of its data and program instructions.
 - Four areas
   - Stack Segment
@@ -14,7 +14,7 @@
   - Data Segment (compiler generated address)
   - Text Segment (compiler generated address)
 
-**Stack**
+### Stack
 1. Local Variables
 2. Read/write
 3. Area grows with program
@@ -23,45 +23,45 @@
 
 _stack.c_
 
-**Heap**
+### Heap
 1. Dynamic memory area
 2. Read/write
 3. Memory needs to be manually allocated/deallocated (or garbage collected)
 4. Area grows/shrinks
 5. Typically requires operating system support
 
-```
+```C
 int *array = malloc(sizeof(int) *20);
 ```
 
-**Data**
+### Data
 1. Contains static initialzed variables, global varables, static local variables.
 2. Data are read/write
 3. Size computed at compile time (does not change)
 
-```
+```C
 int globalVariable = 10; //different segment of memory
 int main(){
     return 0;
 }
 ```
 
-**Text**
+### Text
 1. Readonly
 2. size doesn't change
 3. Contains executable machine instructions
 4. Can be shared if running multiple times
 
-Only instructions go into text segment
+- Only instructions go into text segment
 
-```
+```C
 add $s1, $s2, $s3
 ```
 (not really in assembly though)
 
-## Variables in Memory
+### Variables in Memory
 _memory.c_
-```
+```C
 int N = 10;
 int max(int x, int y)
 {
@@ -84,17 +84,17 @@ global N in **data**
 
 Argument variables are local variables.
 
-# 3.2 Pointers
-[top](#week-3-memory)
-## Variables and Addresses
+## 3.2 Pointers
+[top](##week-3-memory)
+### Variables and Addresses
 - Every variable in C has a name and a value associated with it.
 - When a variale is declared, memory is allocated to hold the value of that variable
 - This memory has an address
 
-## Pointers
+### Pointers
 - A pointer is a type of variable whose value is an address in program memory.
 - The "*" indicates that ptr is a pointer variable and the int specifies that it will store the address of an integer variable (4 bytes)
-```
+```C
 int * ptr;
 ```
 memory
@@ -107,16 +107,16 @@ memory
 |    |
 ```
 
-## Referencing
+### Referencing
 - The "&" operator *references* a variable
   - Retrieves the address of the variable
-```
+```C
 int x = 10;
 int *ptr  = &x;
 ```
 - This writes the *address* of variable x into the pointer variable ptr;
 
-## Dereferencing
+### Dereferencing
 - We *dereference* a pointer (refer to the values of the address to which is points) by using unary "*" operator.
 ```
 int x = 10; //x=10
@@ -141,22 +141,22 @@ memory
 ------
 |    |
 ```
-## Pointer example program
+### Pointer example program
 *pointer.c*
 
 - multiple pointers can reference the same variable. Change one dereferenced value will update "both" dereferenced values.
 
-## Null Pointers
+### Null Pointers
 - A null ponter is a special pointer value that is known to not point anywhere
 - This means that a NULL pointer does not point ot any valid memory address,
-```
+```C
 int *ptr = NULL;//if you don't assign, the value will be GARBAGE
 if (ptr == NULL) {
   Statement block;
 }
 ```
 
-## Segmentation Faults
+### Segmentation Faults
 - Cannot dereference a NULL pointer.
 - Dereferencing garbage variables will either:
   - Cause a segmentation fault
@@ -164,7 +164,7 @@ if (ptr == NULL) {
     - Change an arbitrary address space - this could be a legitimate value.
 You cannot check if a pointer is garbage.
 
-## Void Pointer
+### Void Pointer
 - A generic pointer is a pointer variable that has void as its data type.
 - The void pointer can be pointed at variables of any data type.
 - Notice that all pointer variablesare the same size, as addresses are of fixed size.
@@ -173,7 +173,7 @@ void* ptr=NULL;
 ```
 *voidPointer.c*
 
-## Pointers to Pointers
+### Pointers to Pointers
 - Pointers can hold the address of another pointer variable
 - To declare pointer to pointers add an * for each level of reference
 *pointersToPointers.c*
@@ -186,13 +186,13 @@ void* ptr=NULL;
 |**  |ppx-----
 ```
 
-## Malloc
+### Malloc
 - recall that local variables are allocated on the stack
 - in C, we use malloc to allocate memory on the heap.
 - **syntax**: ptr=(cast-type*) malloc(byte-size);
 - **example**
   - 100 * sizeof(int):100*number of bytes in an integer=400bytes
-```
+```C
 int* ptr = (int*)malloc(100*sizeof(int));
 ```
 - _local stack variable assigning the value of an address on the heap_
@@ -200,12 +200,12 @@ int* ptr = (int*)malloc(100*sizeof(int));
 - malloc returns a void pointer which is an address that lives in the heap.
 - named variables always go in data or stack
 
-## Free
+### Free
 - Local variables on the stack are reclaimed once the function returns
 - memory on the heap has to be reclaimed manually using the free method
 - **syntax**: free(ptr)
 - **example**
-```
+```C
 int *ptr=malloc(sizeof(int)*10);
 // int *ptr is the variable that is holding the address
 // malloc(sizeof(int)*10) is the address itself
@@ -216,15 +216,15 @@ free(ptr); //free the address of the ptr on the heap
 - calling free on a non-heap-allocated address _may_ crash the program.
 
 **what happens here?**
-```
+```C
 int *x = malloc(100 * sizeof(int));
 x = NULL;
 ```
-# 3.3 Arrays
-[top](#week-3-memory)
+## 3.3 Arrays
+[top](##week-3-memory)
 - Arrays are a way of holding multiple variables of the same type at a time.
 - Instead of having k variables, we have one isngle arary variable with k values.
-```
+```C
 int grade1=100;
 int grade2=100;
 ...
@@ -232,23 +232,23 @@ int gradeN=90;
 ```
 vs 
 
-## Array Declaration
+### Array Declaration
 **syntax** type name[size];
 **example** int array[50];
 
-```
+```C
 int mark[5]={1,2,3,4,5};
 mark[0]==1
 mark[1]==2
 ```
 
-## version of C
+### version of C
 - compile differently
 - use ascii C notation mostly please (backwards compatible)
 
 
-## Array Indexing
-```
+### Array Indexing
+```C
 int A[5];
 int i = 3;
 A[i]=5; //writing
@@ -258,7 +258,7 @@ int x=A[i]; //reading
   - When an array is declared, that many bytes are allocated next to eachother in memory.
 - Index has to be an integer or evaluate to an integer x+1
 
-## Arrays and Loops
+### Arrays and Loops
 _arrayLoop.c_
 ```C
 int A[5];
@@ -277,14 +277,14 @@ printf("Min of A = %d\n", min);
 return 0;
 ```
 
-## Out of Bounds
+### Out of Bounds
 - Compiler won't catch array out of bounds errors;
 - Program will catch, or depending on compiler, unexpected behavior :/
 
 _example.c_
 
-## Pointers and Arrays
-## Arrays and Functions
+### Pointers and Arrays
+### Arrays and Functions
 
 - Arrays can be passed as arguments to functions
 - Potentially need to pass the size of the array
@@ -312,7 +312,7 @@ int reverse(int* A,int size); //if you derefernce array, it will have an effect 
 int reverse(int A[10]);
 ```
 
-## Pointer Arithmetic
+### Pointer Arithmetic
 - The ++(--) operator can be used to advance(decrease) the pointer by a number of bytes (its type).
 
 _pointerArithmetic.c_
@@ -327,8 +327,8 @@ while (ptr != &array[5])
 return 0;
 ```
 
-## Matrices
-## Array Dimensions
+### Matrices
+### Array Dimensions
 - Arrays can have multiple dimensions
   - a one-dimensional array is like a row in a table
   - a two-dimensional array is an entire table
@@ -336,7 +336,7 @@ return 0;
 - C does not put a limit on the number of dimensions.
 - 3 d array - n^3 elements in the matrix bleh
 
-## Two-Dimensional Arrays
+### Two-Dimensional Arrays
 - **syntax** data_type array_name[row_size][column_size];
 - Elements are accessed using two subscripts (i,j)
 - **example** int grades[3][5];
@@ -361,7 +361,7 @@ int main(){
 }
 ```
 
-## Strings
+### Strings
 - A string is a null-terminated character array
 - to mark the end of the array, a null character ("\0") is placed at the end to signify the end of the string
 - **syntax**: char str[size];
@@ -401,9 +401,9 @@ int compareStrings(char* string1, char* string2, int N){
 - The header file string.h contains several useful methods:
 - size_t
 
-# 3.4 Structures and Enumerations
-[top](#week-3-memory)
-## Structures
+## 3.4 Structures and Enumerations
+[top](##week-3-memory)
+### Structures
 - A structure is a user-defined data-type
 - **syntax**
 ```C
@@ -427,7 +427,7 @@ struct Student{
 struct Student sam
 ```
 
-## Typedef
+### Typedef
 
 - The typedef keyword creates a new type definition:
 ```C
@@ -442,7 +442,7 @@ typedef struct student {
 Student sam;
 ```
 
-## Declaring an instance
+### Declaring an instance
 - the general syntax to initialze a structure variable is given as follows:
 ```C
 Studen sam = {"Sam","Biology",4.0};
@@ -453,7 +453,7 @@ Student sam = {"Sam", "Cybersecurity",4.0};
 Student jen = sam;
 ```
 
-## Accessing Members
+### Accessing Members
 - A structure member variable is generally accessed using a "." (dot operator)
 - **syntax** struct_var.member_name
 - **example**
@@ -462,7 +462,7 @@ Student sara;
 sara.gpa=4.0;
 ```
 
-## Accessing Members via Pointers
+### Accessing Members via Pointers
 - if we have a pointer to a struct, the we would first need to dereference the value
 - **syntax** (*struct_var).member_name
 - to simplify, we use the "->" operator
@@ -475,14 +475,14 @@ susan->gpa=3.7;
 //the previous two lines mean the exact same thing!!
 ```
 
-## Structures and Functions
+### Structures and Functions
 - like all other types in C, strutures are passed by value by default
 - this will create a copy of the structure being passed.
 - the code given below passes a structure to the function using the call-by-value method.
 - _Passing by pointer is often used to avoid making copies._
 _structuresFunctions.c_
 ```C
-#include <stdio.h>
+##include <stdio.h>
 
 typedef struct
 {
@@ -509,7 +509,7 @@ int main()
 }
 ```
 
-## Enumerations
+### Enumerations
 - The enumerated data type is a user-defined type based on the standard integer type.
 - **syntax** enum enum_name {id_1,id_2,...,id_n};
 - **example**
@@ -523,7 +523,7 @@ typedef enum direction {NORTH, EAST, SOUTH, WEST} directoin;
 Direction dir = EAST;
 ```
 
-## Enumerations and Integers
+### Enumerations and Integers
 - Behind the scenes enumarations are just integers
 ```C
 enum Direcatoin {NORTH, EAST, SOUTH, WEST};
