@@ -1,7 +1,7 @@
 # cps-500-programming-and-data-structures
-CPS 500 Intro to Programming and Data Structures | Syracuse University
+##CPS 500 Intro to Programming and Data Structures | Syracuse University
 
-## Async Table of Contents
+### Async Table of Contents
 - [Week 1: Introduction](/async/week1_intro/README.md#week-1-introduction)
 - [Week 2: Control](/async/week2_control/README.md#week-2-control)
 - [Week 3: Memory](/async/week3_memory/README.md#week-3-memory)
