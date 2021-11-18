@@ -1,5 +1,10 @@
 # Week 7 Arrays, List, Queues, and Stacks
 [7.1 Arrays Revisited](#71-arrays-revisited)
+[7.2 Linked Lists](#72-linked-lists)
+[7.3 Reversing a Linked List](#73-reversing-a-linked-list)
+[7.4 List vs Array](#74-list-vs-array)
+[7.5 Queues](#75-queues)
+[7.6 Stacks](#76-stacks)
 
 ## 7.1 Arrays Revisited
 
@@ -146,7 +151,7 @@ typedef struct doublyListNode
 - (+) if we have a pointer to a node already, then removing it is simple in a DLL.
   - In an SLL, we first need to find the previous node to chang that node's next pointer.
 
-## 7.3 Revesing a Linked List
+## 7.3 Reversing a Linked List
 - Something every programmer should know how to do.
 - Very common interview question.
 - can be down via recursion or iteration.
