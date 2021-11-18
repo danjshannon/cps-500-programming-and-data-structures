@@ -1,5 +1,5 @@
 # CPS 500 Intro to Programming and Data Structures
-# *Syracuse University
+# *Syracuse University*
 ## cps-500-programming-and-data-structures
 
 
