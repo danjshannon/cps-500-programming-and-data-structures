@@ -1,8 +1,8 @@
 # Week 3: Memory
-- [3.1 Memory](##31-memory)
-- [3.2 Pointers](##32-pointers)
-- [3.3 Arrays](##33-arrays)
-- [3.4 Structures and Enumerations](##34-structures-and-enumerations)
+- [3.1 Memory](#31-memory)
+- [3.2 Pointers](#32-pointers)
+- [3.3 Arrays](#33-arrays)
+- [3.4 Structures and Enumerations](#34-structures-and-enumerations)
 
 ## 3.1 Memory
 [top](##week-3-memory)
