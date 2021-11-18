@@ -1,4 +1,4 @@
-# Linked Lists
+# 7.2 Linked Lists
 ## Arrays are fast but...
 - arrays have constant access time
 - adding/removing to an array is difficult

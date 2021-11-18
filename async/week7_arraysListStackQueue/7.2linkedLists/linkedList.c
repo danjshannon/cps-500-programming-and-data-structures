@@ -31,6 +31,22 @@ void addHead(List *list, int value)
     list->head = node;
 }
 
+void reverse(List *list)
+{
+    if (list->head == NULL)
+        return;
+    ListNode *prev = NULL;
+    ListNode *ptr = list;
+    while (ptr != NULL)
+    {
+        ListNode *tmp = ptr->next;
+        ptr->next = prev;
+        prev = ptr;
+        ptr = tmp;
+    }
+    list->head = prev;
+}
+
 void print(List *list)
 {
     ListNode *current = list->head; //this is a POINTER to a list node, not a new ListNode
