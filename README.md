@@ -1,8 +1,6 @@
 # cps-500-programming-and-data-structures
 CPS 500 Intro to Programming and Data Structures | Syracuse University
 
-- Notes from async and sync lectures are located in their respective directories.
-
 ## Async Table of Contents
 - [Week 1: Introduction](/async/week1_intro/README.md#week-1-introduction)
 - [Week 2: Control](/async/week2_control/README.md#week-2-control)
