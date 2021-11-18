@@ -7,6 +7,7 @@
 - [6.6 Searching and Sorting](##66-Searching-and-Sorting)
 
 ## 6.1 Recursion
+[top](#Week-6-Recursion)
 - Involves a function calling itself.
 
 ### Introduction to Recursion
@@ -50,7 +51,7 @@ void printRange(int n){
   - Due to stack memory segment overflow
 
 ## 6.2 Factorial Example
-
+[top](#Week-6-Recursion)
 n! = n* (n-1)*(n-2)*...*1
 
 ```C
@@ -79,6 +80,7 @@ int factorial(int n){
 - Factorial example is O(n) runtime
 
 ## 6.3 GCD Example
+[top](#Week-6-Recursion)
 ### Greatest Common Divisor
 - The greatest common divisor of two or more integers (which are not both zero) is the largest positive integer that divides each of the integers.
 ```C
@@ -100,6 +102,7 @@ int gcd(int x, int y) {
   - Which calls GCD(<.5A,B%<.5A)
 
 ## 6.4 Fibonacci Numbers
+[top](#Week-6-Recursion)
 - A series of integers such taht each number is the sum of the previous two numbers in the sequence
 - 1,1,2,3,5,8,13,21,34,55,89,144...
 ```C
@@ -136,6 +139,7 @@ int iterativeFib(int n){
 ```
 
 ## 6.5 Tail Recursion
+[top](#Week-6-Recursion)
 ### Recursion vs Iteration
 - Generally, a recursive algorithm produces a slower than equivalent iterative algorithm
 - This is due to the overhead of function calls pushing arguments and control values onto the stack
@@ -166,6 +170,7 @@ factorial(5,1);
 ```
 
 ## 6.6 Searching and Sorting
+[top](#Week-6-Recursion)
 ### Finding an Element
 ### Brute Force
 - Lets say we have an array of integers. How do we check if a given value is present?

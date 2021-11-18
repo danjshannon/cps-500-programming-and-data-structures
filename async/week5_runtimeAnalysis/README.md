@@ -1,10 +1,11 @@
 ## Week 5: Runtime Analysis
-- [5.1 Runtime Analysis](##51-Runtime-Analysis)
-- [5.2 Proportional Rates of Growth](##52-Proportional-Rates-of-Growth)
-- [5.3 Limit Rule](##53-Limit-Rule)
-- [5.4 Loop Analysis](##54Loop-Analysis)
-- [5.5 Sorting Examples](##55-Sorting-Examples)
-## 5.1 Runtime Analysis
+- [5.1 Runtime Analysis](#51-Runtime-Analysis)
+- [5.2 Proportional Rates of Growth](#52-Proportional-Rates-of-Growth)
+- [5.3 Limit Rule](#53-Limit-Rule)
+- [5.4 Loop Analysis](#54-Loop-Analysis)
+- [5.5 Sorting Examples](#55-Sorting-Examples)
+## 5.1 Runtime Analysis 
+[top](#Week-5-Runtime-Analysis)
 
 ### How to measure algorithm speed
 - **option 1** implement the algorithm and instrument to measure how long it takes.
@@ -80,6 +81,7 @@ for (int i=1;i<n;i++){
   - grows linearly with N
   
 ## 5.2 Proportional Rates of Growth
+[top](#Week-5-Runtime-Analysis)
 ### Big-O
 
 O(g(n))={f(n):there exists (&exist;) positive constances c and n<sub>0</sub> such that 0&le;f(n)&le;c*g(n),for all n&ge;n<sub>0</sub>}
@@ -202,6 +204,7 @@ lim(n->&infin;)f(n)/g(n)=c
 - therefore f(n)&isin;O(n<sup>2</sup>)
 
 ## 5.4 Loop Analysis
+[top](#Week-5-Runtime-Analysis)
 
 - State of the O of each of the following loops in terms of N
 1. 
@@ -255,6 +258,7 @@ for (int i =1;i<N;i*=3){
   - O(N)
 
 ## 5.5 Sorting Examples
+[top](#Week-5-Runtime-Analysis)
 ### Selection Sort
 - Selection sort works by:
   1. Finding the smallest number and putting it in the 0th index
