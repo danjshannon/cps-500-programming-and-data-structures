@@ -1,9 +1,9 @@
 # Week 4: Mathematics
-- [4.1 Logic](##41-Logic)
-- [4.2 Set Theory](##42-set-theory)
-- [4.3 Predicate Logic](##43-predicate-logic)
-- [4.4 Probability](##44-probability)
-- [4.5 Sequences and Summations](##45-sequences-and-summations)
+- [4.1 Logic](#41-Logic)
+- [4.2 Set Theory](#42-set-theory)
+- [4.3 Predicate Logic](#43-predicate-logic)
+- [4.4 Probability](#44-probability)
+- [4.5 Sequences and Summations](#45-sequences-and-summations)
 
 ## 4.1 Logic
 [top](#week-4-mathematics)
