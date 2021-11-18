@@ -52,7 +52,7 @@ void printRange(int n){
   - Due to stack memory segment overflow
 
 ## 6.2 Factorial Example
-[top](#Week-6-Recursion)
+[top](#Week-6-Recursion)\
 n! = n* (n-1)*(n-2)*...*1
 
 ```C
