@@ -5,6 +5,7 @@ CPS 500 Intro to Programming and Data Structures | Syracuse University
 - Async folders *generally* have 1 folder per module.
 
 ## Async Table of Contents
+- [Week 2: Control](https://github.com/danjshannon/cps-500-programming-and-data-structures/tree/main/async/week2_control#week-2-control)
 - [Week 3: Memory](https://github.com/danjshannon/cps-500-programming-and-data-structures/tree/main/async/week3_memory#week-3-memory)
 - [Week 4: Mathematics](https://github.com/danjshannon/cps-500-programming-and-data-structures/tree/main/async/week4_mathematics#week-4-mathematics)
 - [Week 5: Runtime Analysis](https://github.com/danjshannon/cps-500-programming-and-data-structures/tree/main/async/week5_runtimeAnalysis#week-5-runtime-analysis)
