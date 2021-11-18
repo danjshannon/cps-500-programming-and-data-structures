@@ -2,7 +2,6 @@
 CPS 500 Intro to Programming and Data Structures | Syracuse University
 
 - Notes from async and sync lectures are located in their respective directories.
-- Async folders *generally* have 1 folder per module.
 
 ## Async Table of Contents
 - [Week 1: Introduction](https://github.com/danjshannon/cps-500-programming-and-data-structures/tree/main/async/week1_intro#week-1-introduction)
