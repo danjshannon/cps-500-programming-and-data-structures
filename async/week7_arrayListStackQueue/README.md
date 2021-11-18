@@ -1,5 +1,5 @@
 # Week 7: Array, List, Queue, and Stack
-- [Home](https://github.com/danjshannon/cps-500-programming-and-data-structures#cps-500-data-structures)
+- [Home](https://github.com/danjshannon/cps-500-programming-and-data-structures#cps-500-programming-and-data-structures)
 - [7.1 Arrays Revisited](#71-arrays-revisited)
 - [7.2 Linked Lists](#72-linked-lists)
 - [7.3 Reversing a Linked List](#73-reversing-a-linked-list)

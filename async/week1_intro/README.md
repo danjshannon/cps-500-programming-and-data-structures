@@ -1,5 +1,5 @@
 # Week 1: Introduction
-- [Home](https://github.com/danjshannon/cps-500-programming-and-data-structures#cps-500-data-structures)
+- [Home](https://github.com/danjshannon/cps-500-programming-and-data-structures#cps-500-programming-and-data-structures)
 - [1.1 Hello World](#11-hello-world)
 - [1.2 Operators](#12-Operators)
 ## 1.1 Hello World

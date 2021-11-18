@@ -1,5 +1,5 @@
 # Week 2: Control
-- [Home](https://github.com/danjshannon/cps-500-programming-and-data-structures#cps-500-data-structures)
+- [Home](https://github.com/danjshannon/cps-500-programming-and-data-structures#cps-500-programming-and-data-structures)
 - [2.1 Control](#21-Control)
 - [2.2 Functions](#22-Functions) 
 - [2.3 Loops](#23-Loops)
