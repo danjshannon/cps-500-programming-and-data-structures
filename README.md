@@ -10,4 +10,4 @@ CPS 500 Intro to Programming and Data Structures | Syracuse University
 - [Week 4: Mathematics](/async/week4_mathematics/README.md#week-4-mathematics)
 - [Week 5: Runtime Analysis](/async/week5_runtimeAnalysis/README.md#week-5-runtime-analysis)
 - [Week 6: Recursion](/async/week6_recursion/README.md#week-6-recursion)
-- [Week 7: Array, List, Stack, and Queue](/async/week7_arrayListStackQueue/README.md#week-7-array-list-queue-and-stack)
+- [Week 7: Array, List, Queue, and Stack](/async/week7_arrayListStackQueue/README.md#week-7-array-list-queue-and-stack)
