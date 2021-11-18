@@ -1,21 +1,21 @@
-# Week 5: Runtime Analysis
-- [5.1 Runtime Analysis](#51-Runtime-Analysis)
-- [5.2 Proportional Rates of Growth](#52-Proportional-Rates-of-Growth)
-- [5.3 Limit Rule](#53-Limit-Rule)
-- [5.4 Loop Analysis](#54Loop-Analysis)
-- [5.5 Sorting Examples](#55-Sorting-Examples)
-# 5.1 Runtime Analysis
+## Week 5: Runtime Analysis
+- [5.1 Runtime Analysis](##51-Runtime-Analysis)
+- [5.2 Proportional Rates of Growth](##52-Proportional-Rates-of-Growth)
+- [5.3 Limit Rule](##53-Limit-Rule)
+- [5.4 Loop Analysis](##54Loop-Analysis)
+- [5.5 Sorting Examples](##55-Sorting-Examples)
+## 5.1 Runtime Analysis
 
-## How to measure algorithm speed
+### How to measure algorithm speed
 - **option 1** implement the algorithm and instrument to measure how long it takes.
   - would do this for multiple input sizes.
   - There are a lot of possible inputs/
   - Time differs based on a lot of variables - ram, cpu, other programs running
-## Measure algorithm growth
+### Measure algorithm growth
 - **option 2** Mathematically measure the runtime of an algorithm as a function of the size of the input.
   - n: n&isin;N
   - Finding precise funtion is hard, estimate usually good enough.
-## Striaght-line code
+### Striaght-line code
 - **straight-line** code is code that meets all of the following criteria.
   - contains no loops
   - contains no recursion
@@ -47,7 +47,7 @@ int recursiveMin(int[] array,int index, int N){
     return min(array[index],recursiveMin(array,index+1,N));
 }
 ```
-## Runtime Estimate
+### Runtime Estimate
 1. Identify the peices of straight-line code that are bried deepest in the method's loops
 2. We count how many times these innermost peices of the program are executed as a function of n.
 
@@ -74,13 +74,13 @@ for (int i=1;i<n;i++){
   - i increases by 1 every loop execution
   - the loop then executes: [n-1]/1=**n-1** times
 
-## Generalize
+### Generalize
 - The straigh-line code executes N-1 times.
 - we can say the code runs approximately N times.
   - grows linearly with N
   
-# 5.2 Proportional Rates of Growth
-## Big-O
+## 5.2 Proportional Rates of Growth
+### Big-O
 
 O(g(n))={f(n):there exists (&exist;) positive constances c and n<sub>0</sub> such that 0&le;f(n)&le;c*g(n),for all n&ge;n<sub>0</sub>}
 
@@ -102,17 +102,17 @@ O(g(n))={f(n):there exists (&exist;) positive constances c and n<sub>0</sub> suc
   - n<sup>2</sup> + 1000n
   - 1000n<sup>2</sup> + 1000n
 
-## Big-O notation in practice
+### Big-O notation in practice
 - Pay attention to dominant terms
 - Don't include constants in O
 - We generally only care about the smallest g such that f(x) is int (O(g(x)))
 
-## Big-O rules
+### Big-O rules
 1. If f(n) is a polynomial of degree d, then f(n) is O(n<sup>d</sup>)
 2. Use the smallest possible class of functions if possible
 3. Use the simplest expression of the class
 
-# Bit-Omega (Lower Bound)
+## Bit-Omega (Lower Bound)
 &omega;(g(n))={f(n): &exist; positive constances c and n<sub>0</sub> such that 0&le;c*g(n)&le;f(n), for all n&ge;n<sub>0</sub>}
 - looking for a lower bound.
 - g(n) is a function that characterizes a lower bound on f(n). It is a limit on how fast the running time of the algo can be.
@@ -132,7 +132,7 @@ f(n)=100n<sup>2</sup>+8000n+97
 
 - c=1, n<sub>0</sub>=16
 
-# Big Theta
+## Big Theta
 
 &theta;(g(n))={f(n): &exist; positive constants c<sub>1</sub> and c<sub>2</sub> such that 0&le;c<sub>1</sub>*g(n)&le;f(n)&le;c<sub>2</sub>*g(n) for all n&ge;n<sub>0</sub>}
 
@@ -148,7 +148,7 @@ f(n)=100n<sup>2</sup>+8000n+97
 ### &theta; Notation Example
 - n<sup>2</sup>/2-n=&theta;(n<sup>2</sup>) with c1=1/4, c2=1/2, n0=8
 
-## Asymptotic Analysis
+### Asymptotic Analysis
 - **Asymptotic Analysis** is a way to describe behavior of functions in the limit
 - Describes the growth of functions
 - abstract away lower order terms and constant functions
@@ -161,7 +161,7 @@ O&asymp;&le;
 
 &theta;&asymp;=
 
-# 5.3 Limit Rule
+## 5.3 Limit Rule
 
 lim(n->&infin;)f(n)/g(n)=c
 - Where 0&le;c&le;+&infin;
@@ -170,7 +170,7 @@ lim(n->&infin;)f(n)/g(n)=c
 - if c = 0 then f(n) &isin; O(g(n)), but f(n) &notin; &theta;(g(n)),&omega;(g(n))
 - if c = &infin; then f(n) &isin; &omega;(g(n)), but f(n) &notin; &theta;(g(n)),O(g(n))
 
-## Limit Rule Example
+### Limit Rule Example
 - FindMin: f(n)=n-1
 - claim: f(n)=&theta;(n)
 - lim(n&rarr;&infin;)f(n)/g(n)
@@ -181,7 +181,7 @@ lim(n->&infin;)f(n)/g(n)=c
 - lim(n&rarr;&infin;)[1-0]=1
 - if 0<1<+&infin;, then f(n)=&theta;(n)
 
-## Potential limit rule example
+### Potential limit rule example
 - f(n)=n<sup>3</sup>-n<sup>2</sup>-1
 - claim: f(n)=&omega;(n)
 - lim(n&rarr;&infin;)f(n)/g(n)
@@ -192,7 +192,7 @@ lim(n->&infin;)f(n)/g(n)=c
 - lim(n&rarr;&infin;)n<sup>2</sup>=&infin;
 - Therefore f(n)=&omega;(n)
 
-## Big-) limit rule example
+### Big-) limit rule example
 - f(n)=n
 - claim: f(n)=&omega;(n)
 - lim(n&rarr;&infin;)f(n)/g(n)
@@ -201,7 +201,7 @@ lim(n->&infin;)f(n)/g(n)=c
 - lim(n&rarr;&infin;)1/&infin;=0;
 - therefore f(n)&isin;O(n<sup>2</sup>)
 
-# 5.4 Loop Analysis
+## 5.4 Loop Analysis
 
 - State of the O of each of the following loops in terms of N
 1. 
@@ -245,7 +245,7 @@ for (int i =1;i<N;i*=3){
 ```
   - Outer loop
     - (int i =1;i<N;i*=3)
-    - Similar to loop #1, we get O(log(N))
+    - Similar to loop ##1, we get O(log(N))
   - Inner Loop
     - for( int j=0; j<i; j++)
     - |i=0|/1=O(i)...?
@@ -254,8 +254,8 @@ for (int i =1;i<N;i*=3){
     - sum &sum; the last column - geomoetry summation
   - O(N)
 
-# 5.5 Sorting Examples
-## Selection Sort
+## 5.5 Sorting Examples
+### Selection Sort
 - Selection sort works by:
   1. Finding the smallest number and putting it in the 0th index
   2. Then finding the second smallest number and putting it in the first index
@@ -301,7 +301,7 @@ if (a[j] < minVal)
 - outer loop: executes [(n-1)-0]/1 = **n-1 times**
 - innermost code: **O(n<sup>2</sup>)**
 
-## Insertion Sort
+### Insertion Sort
 - Insertion sort works byL
   1. Selects on item (ith index) at a time (starting at 1)
   2. Everything to the left of i is already sorted
@@ -339,19 +339,19 @@ j = j - 1;
 - a[i-1]>a[i] will always be true
 - insertionSort &isin; O(n<sup>2</sup>)
 
-## Terminology
+### Terminology
 - Best-case runtime
 - Worst-case rutime
 - Average-case runtime
 
-## Case vs Bound
+### Case vs Bound
 - foreach case (best,worst,average), we can find the big-O, big-omega, and theta
 - These are orthoginal concepts
 - However, we typically care about:
   1. The big-o (upper bound) of the worst case as this gives us the the true upper bound of the alogorithm
   2. The big-&omega; (lower bound) of the best case, as this gives us the true lower bound of the algorithm
 
-## Bubble Sort
+### Bubble Sort
 - repeatedly iterates through the list
   - compares pairs of adjacent elements
   - if the two elements are out of order, swap them
