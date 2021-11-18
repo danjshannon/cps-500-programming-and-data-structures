@@ -1,4 +1,4 @@
-# Week 7 Arrays, Lists, Queues, and Stacks
+# Week 7: Arrays, Lists, Queues, and Stacks
 - [7.1 Arrays Revisited](#71-arrays-revisited)
 - [7.2 Linked Lists](#72-linked-lists)
 - [7.3 Reversing a Linked List](#73-reversing-a-linked-list)
