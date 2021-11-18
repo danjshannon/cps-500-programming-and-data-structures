@@ -164,7 +164,7 @@ O&asymp;&le;
 &theta;&asymp;=
 
 ## 5.3 Limit Rule
-
+[top](#Week-5-Runtime-Analysis)\
 lim(n->&infin;)f(n)/g(n)=c
 - Where 0&le;c&le;+&infin;
 
