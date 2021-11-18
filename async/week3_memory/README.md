@@ -61,7 +61,7 @@ add $s1, $s2, $s3
 (not really in assembly though)
 
 ### Variables in Memory
-_memory.c_
+[memory.c](./memory.c)
 ```C
 int N = 10;
 int max(int x, int y)
@@ -172,7 +172,7 @@ You cannot check if a pointer is garbage.
 ```
 void* ptr=NULL;
 ```
-*voidPointer.c*
+[voidPointer.c](./voidPointer.c)
 
 ### Pointers to Pointers
 - Pointers can hold the address of another pointer variable
@@ -260,7 +260,7 @@ int x=A[i]; //reading
 - Index has to be an integer or evaluate to an integer x+1
 
 ### Arrays and Loops
-_arrayLoop.c_
+[arrayLoop.c](./arrayLoop.c)
 ```C
 int A[5];
 ...
