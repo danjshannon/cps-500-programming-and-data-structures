@@ -6,7 +6,7 @@
 - [3.4 Structures and Enumerations](#34-structures-and-enumerations)
 
 ## 3.1 Memory
-[top](##week-3-memory)
+[top](#week-3-memory)
 ### Program Memory
 - Every program has memory associated with it to store all of its data and program instructions.
 - Four areas
@@ -86,7 +86,7 @@ global N in **data**
 Argument variables are local variables.
 
 ## 3.2 Pointers
-[top](##week-3-memory)
+[top](#week-3-memory)
 ### Variables and Addresses
 - Every variable in C has a name and a value associated with it.
 - When a variale is declared, memory is allocated to hold the value of that variable
@@ -222,7 +222,7 @@ int *x = malloc(100 * sizeof(int));
 x = NULL;
 ```
 ## 3.3 Arrays
-[top](##week-3-memory)
+[top](#week-3-memory)
 - Arrays are a way of holding multiple variables of the same type at a time.
 - Instead of having k variables, we have one isngle arary variable with k values.
 ```C
@@ -403,7 +403,7 @@ int compareStrings(char* string1, char* string2, int N){
 - size_t
 
 ## 3.4 Structures and Enumerations
-[top](##week-3-memory)
+[top](#week-3-memory)
 ### Structures
 - A structure is a user-defined data-type
 - **syntax**
