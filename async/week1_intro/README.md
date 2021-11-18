@@ -1,5 +1,5 @@
 # Week 1: Introduction
-- [Home](../../#cps-500-programming-and-data-structures)
+- [Home](/blob/main/#cps-500-programming-and-data-structures)
 - [1.1 Hello World](#11-hello-world)
 - [1.2 Operators](#12-Operators)
 ## 1.1 Hello World
