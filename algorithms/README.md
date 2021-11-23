@@ -295,38 +295,38 @@ typedef struct tree{
 
 ### Depth-First Search
 [top](#algorithms-and-data-structures)
-### In-Order
-[top](#algorithms-and-data-structures)
-```C
-void inOrder (TreeNode* node){
-    if(node==NULL) return;
-    inOrder(node->left);
-    visit(node);
-    inOrder(node->right);
-}
-```
+    ### In-Order
+    [top](#algorithms-and-data-structures)
+    ```C
+    void inOrder (TreeNode* node){
+        if(node==NULL) return;
+        inOrder(node->left);
+        visit(node);
+        inOrder(node->right);
+    }
+    ```
 
-### Pre-Order
-[top](#algorithms-and-data-structures)
-```C
-void preOrder (TreeNode* node){
-    if(node==NULL) return;
-    visit(node);
-    inOrder(node->left);
-    inOrder(node->right);
-}
-```
+    ### Pre-Order
+    [top](#algorithms-and-data-structures)
+    ```C
+    void preOrder (TreeNode* node){
+        if(node==NULL) return;
+        visit(node);
+        inOrder(node->left);
+        inOrder(node->right);
+    }
+    ```
 
-### Post-Order
-[top](#algorithms-and-data-structures)
-```C
-void postOrder (TreeNode* node){
-    if(node==NULL) return;
-    inOrder(node->left);
-    inOrder(node->right);
-    visit(node);
-}
-```
+    ### Post-Order
+    [top](#algorithms-and-data-structures)
+    ```C
+    void postOrder (TreeNode* node){
+        if(node==NULL) return;
+        inOrder(node->left);
+        inOrder(node->right);
+        visit(node);
+    }
+    ```
 
 ### Breadth-First Search
 [top](#algorithms-and-data-structures)
