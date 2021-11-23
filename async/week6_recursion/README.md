@@ -313,7 +313,7 @@ int partition(int array[], int low, int high){
     for(int j=low;j<high;j++){
         if(array[j]<=pivot){
             i++;
-            swap(array, i. j);
+            swap(array, i, j);
         }
     }
     swap(array,i+i,high);
