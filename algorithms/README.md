@@ -9,6 +9,17 @@
 - [Searching](#Searching)
   - [Binary Search](#Binary-search)
 - [Linked List](#Linked-List)
+  - [Add Head](#add-head)
+  - [Reverse Linked-List](#reverse-linked-list)
+  - [Traverse Linked-List](#traverse-linked-list)
+- [Queue](#queue)
+- [Stack](#stack)
+- [Binary Tree](#Binary-Tree)
+  - [Depth-First Search](#depth-first-search)
+    - [In-Order](#in-order)
+    - [Pre-Order](#pre-order)
+    - [Post-Order](#post-order)
+  - [Breadth-First Search](#Breadth-first-search)
 
 ## Sorting
 [top](#Algorithms-and-Data-Structures)
@@ -207,7 +218,10 @@ typedef struct doublyListNode
     struct doublyListNode *next;
     struct doublyListNode *prev;
 } DoublyListNode;
-
+```
+### Add Head
+[top](#algorithms-and-data-structures)
+```C
 void addHead(List *list, int value)
 {
     //Create a new node to hold value.
@@ -219,7 +233,10 @@ void addHead(List *list, int value)
     //assign the head of the list to the node
     list->head = node;
 }
-
+```
+### Reverse Linked-List
+[top](#algorithms-and-data-structures)
+```C
 void reverse(List *list)
 {
     if (list->head == NULL)
@@ -235,8 +252,11 @@ void reverse(List *list)
     }
     list->head = prev;
 }
-
-void print(List *list)
+```
+### Traverse Linked-List
+[top](#algorithms-and-data-structures)
+```C
+void traverse(List *list)
 {
     ListNode *current = list->head; //this is a POINTER to a list node, not a new ListNode
     while (current != NULL)
@@ -245,5 +265,84 @@ void print(List *list)
         current = current->next;
     }
     printf("NULL\n");
+}
+```
+
+## Queue
+[top](#algorithms-and-data-structures)
+```C
+//Coming soon
+```
+## Stack
+[top](#algorithms-and-data-structures)
+```C
+//Coming soon
+```
+
+## Binary Tree
+[top](#algorithms-and-data-structures)
+```C
+typedef struct treeNode{
+    int data;
+    TreeNode *left;
+    TreeNode *right;
+} TreeNode;
+
+typedef struct tree{
+    TreeNode *root;
+} Tree;
+```
+
+### Depth-First Search
+[top](#algorithms-and-data-structures)
+### In-Order
+[top](#algorithms-and-data-structures)
+```C
+void inOrder (TreeNode* node){
+    if(node==NULL) return;
+    inOrder(node->left);
+    visit(node);
+    inOrder(node->right);
+}
+```
+
+### Pre-Order
+[top](#algorithms-and-data-structures)
+```C
+void preOrder (TreeNode* node){
+    if(node==NULL) return;
+    visit(node);
+    inOrder(node->left);
+    inOrder(node->right);
+}
+```
+
+### Post-Order
+[top](#algorithms-and-data-structures)
+```C
+void postOrder (TreeNode* node){
+    if(node==NULL) return;
+    inOrder(node->left);
+    inOrder(node->right);
+    visit(node);
+}
+```
+
+### Breadth-First Search
+[top](#algorithms-and-data-structures)
+```C
+void bfs(Tree* tree){
+    Queue q;
+    enqueue(&q,tree->root);
+    while(!isEmpty(&q)){
+        TreeNode *next = dequeue(&q);
+        visit(next);
+        if(next->left!=NULL){
+            enqueue(&q, next->left);
+        }
+        if(next->right!=NULL){
+            enqueue(&q, next->right);
+        }
+    }
 }
 ```
