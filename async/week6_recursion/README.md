@@ -1,11 +1,11 @@
 # Week 6: Recursion
 - [Home](/README.md#cps-500-programming-and-data-structures)
-- [6.1 Recursion](##61-recursion)
-- [6.2 Factorial Example](##62-Factorial-Example)
-- [6.3 GCD Example](##63-GCD-Example)
-- [6.4 Fibonacci Numbers](##64-Fibonacci-Numbers)
-- [6.5 Tail Recursion](##65-Tail-Recursion)
-- [6.6 Searching and Sorting](##66-Searching-and-Sorting)
+- [6.1 Recursion](#61-recursion)
+- [6.2 Factorial Example](#62-Factorial-Example)
+- [6.3 GCD Example](#63-GCD-Example)
+- [6.4 Fibonacci Numbers](#64-Fibonacci-Numbers)
+- [6.5 Tail Recursion](#65-Tail-Recursion)
+- [6.6 Searching and Sorting](#66-Searching-and-Sorting)
 
 ## 6.1 Recursion
 [top](#Week-6-Recursion)
@@ -52,7 +52,7 @@ void printRange(int n){
   - Due to stack memory segment overflow
 
 ## 6.2 Factorial Example
-[top](#Week-6-Recursion)
+[top](#Week-6-Recursion)\
 n! = n* (n-1)*(n-2)*...*1
 
 ```C
