@@ -16,4 +16,6 @@
   - [Sorting](/algorithms/README.md#Sorting)
   - [Searching](/algorithms/README.md#Searching)
   - [Linked-list](/algorithms/README.md#linked-list)
+  - [Queue](/algorithms/README.md#Queue)
+  - [Stack](/algorithms/README.md#Stack)
   - [Binary Tree](/algorithms/README.md#Binary-tree)
