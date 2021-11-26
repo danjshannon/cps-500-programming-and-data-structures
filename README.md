@@ -20,3 +20,4 @@
   - [Queue](/algorithms/README.md#Queue)
   - [Stack](/algorithms/README.md#Stack)
   - [Binary Tree](/algorithms/README.md#Binary-tree)
+  - [Heaps](/algorithms/README.md#heaps)
