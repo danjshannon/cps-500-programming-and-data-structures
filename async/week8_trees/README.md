@@ -358,8 +358,9 @@ void maxHeapify(int arr[], int n, int i) {
 
 - Each height, h in a binary heaps has n/2<sup>h+1</sup> nodes.
 - A node at height h can do at most level h swaps.
-- There are log(N) many heights, so we get the summation:\
-&sum;<sub>h=0</sub><sup>log(N)</sup>[n/2<sup>h+1</sup> \* O(h)]\
-n\*&sum;<sub>h=0</sub><sup>log(N)</sup>[h/2h]\
-n*(1/2 + 2/4 + 3/8 + 4/16 + ... +)=\
-n*2=O(N)
+- There are log(N) many heights, so we get the summation:
+
+> &sum;<sub>h=0</sub><sup>log(N)</sup>[n/2<sup>h+1</sup> \* O(h)]\
+> n\*&sum;<sub>h=0</sub><sup>log(N)</sup>[h/2h]\
+> n*(1/2 + 2/4 + 3/8 + 4/16 + ... +)=\
+> n*2=O(N)
