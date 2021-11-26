@@ -20,6 +20,10 @@
     - [Pre-Order](#pre-order)
     - [Post-Order](#post-order)
   - [Breadth-First Search](#Breadth-first-search)
+- [Binary Search Tree](#binary-search-tree)
+  - [Search](#bst-search)
+  - [Insertion](#bst-insertion)
+  - [Deletion](#bst-deletion)
 
 ## Sorting
 [top](#Algorithms-and-Data-Structures)
@@ -343,6 +347,61 @@ void bfs(Tree* tree){
         if(next->right!=NULL){
             enqueue(&q, next->right);
         }
+    }
+}
+```
+
+## Binary Search Tree
+[top](#algorithms-and-data-structures)
+### BST Search
+[top](#algorithms-and-data-structures)
+```C
+// Returns true (1) if value is found beneath
+// this node. returns false(0) otherwise
+int search(TreeNode* node, int value){
+    if(node==NULL){
+        return 0;
+    } else if(node->data<value){
+        return search(node->right,value);
+    } else{ 
+        return search(node-left,value);
+    }
+}
+```
+### BST Insertion
+[top](#algorithms-and-data-structures)
+```C
+int insert(TreeNode* node, int value){
+    if(node == NULL || node->data == value){
+        return 0;
+    }
+    else if(node->data > value){
+        if(node->left==NULL){
+            node->left = makeNode(value);
+            return 1;
+        }
+        return insert(node->left,value);
+    }else{
+        if(node->right==NULL){
+            node->right = makeNode(value);
+            return 1;
+        }
+        return insert(node->right, value);
+    }
+}
+```
+### BST Deletion
+[top](#algorithms-and-data-structures)
+```C
+void removeNode(int value, TreeNode* node, TreeNode* parent) {
+    if (node->left != NULL && node->right != NULL) {
+        TreeNode* min = minNode(node->right);
+        node->value = min->value;
+        remove(min->key, node-<right, node);
+    } else if (parent->left == node) {
+        parent->left = (node->left != NULL) ? node->left : node->right;
+    } else if (parent->right == node) {
+        parent->right = (node->left != NULL) ? node->left : node->right;
     }
 }
 ```

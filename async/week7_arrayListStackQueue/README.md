@@ -1,4 +1,4 @@
-# Week 7: Array, List, Queue, and Stack
+# Week 7: Arrays, Lists, Queues, and Stacks
 - [Home](/README.md#cps-500-programming-and-data-structures)
 - [7.1 Arrays Revisited](#71-arrays-revisited)
 - [7.2 Linked Lists](#72-linked-lists)
@@ -8,7 +8,7 @@
 - [7.6 Stacks](#76-stacks)
 
 ## 7.1 Arrays Revisited
-[top](#Week-7-Array-List-Queue-and-Stack)
+[top](#Week-7-Arrays-Lists-Queues-and-Stacks)
 
 ### Array Introduction
 - Arrays are contiguous, fixed-size memory allocations of multiple variables of the same type.
@@ -45,7 +45,7 @@ int array[5];
 - Removing an element still requres shifting elements to fill the gap: O(n)
 
 ## 7.2 Linked Lists
-[top](#Week-7-Array-List-Queue-and-Stack)
+[top](#Week-7-Arrays-Lists-Queues-and-Stacks)
 ### Arrays are fast but...
 - arrays have constant access time
 - adding/removing to an array is difficult
@@ -155,7 +155,7 @@ typedef struct doublyListNode
   - In an SLL, we first need to find the previous node to chang that node's next pointer.
 
 ## 7.3 Reversing a Linked List
-[top](#Week-7-Array-List-Queue-and-Stack)
+[top](#Week-7-Arrays-Lists-Queues-and-Stacks)
 - Something every programmer should know how to do.
 - Very common interview question.
 - can be down via recursion or iteration.
@@ -180,7 +180,7 @@ void reverse(List* list){
 - O(N)
 
 ## 7.4 List vs Array
-[top](#Week-7-Array-List-Queue-and-Stack)
+[top](#Week-7-Arrays-Lists-Queues-and-Stacks)
 ### Inerstion at the end
 
 ### Amortized
@@ -212,7 +212,7 @@ void reverse(List* list){
 - List are better at adding to the front of the collectoin, but dynamic arrays are useful because contiguous memory has some advantages outside of theory
 
 ## 7.5 Queues
-[top](#Week-7-Array-List-Queue-and-Stack)
+[top](#Week-7-Arrays-Lists-Queues-and-Stacks)
 - Queues are an **abstract data type**
   - A mathematical model for how we interact with data
 - A **queue** is a collection of ordered data that has two main methods
@@ -233,7 +233,7 @@ void reverse(List* list){
   2. Array: keep track of index to enqueue into and index to dequeue from
 
 ## 7.6 Stacks
-[top](#Week-7-Array-List-Queue-and-Stack)
+[top](#Week-7-Arrays-Lists-Queues-and-Stacks)
 ### Stacks
 - **Stacks** are another abstract data type (ADT)
 - **similar to stack memory*
