@@ -346,7 +346,23 @@ void maxHeapify(int arr[], int n, int i) {
   }
   if(largest != i){ // if largest is not root
     swap(arr[i], arr[largest]);
-    heapify(arr, n, largest); // Recursively heapify the sub-tree
+    maxHeapify(arr, n, largest); // Recursively heapify the sub-tree
+  }
+}
+
+void minHeapify(int arr[], int n, int i) {
+  int smallest=i;
+  int left=2*i+1;
+  int right=2*i+2;
+  if(left < n && arr[left] < arr[smallest]) { // if left is larger than root
+    smallest = left;
+  }
+  if(right < n && arr[right] < arr[smallest]) { // if right is larger than smallest
+    smallest = right;
+  }
+  if(smallest != i){ // if smallest is not root
+    swap(arr[i], arr[smallest]);
+    minHeapify(arr, n, smallest); // Recursively heapify the sub-tree
   }
 }
 ```
@@ -360,7 +376,50 @@ void maxHeapify(int arr[], int n, int i) {
 - A node at height h can do at most level h swaps.
 - There are log(N) many heights, so we get the summation:
 
-> &sum;<sub>h=0</sub><sup>log(N)</sup>[n/2<sup>h+1</sup> \* O(h)]\
-> n\*&sum;<sub>h=0</sub><sup>log(N)</sup>[h/2h]\
-> n*(1/2 + 2/4 + 3/8 + 4/16 + ... +)=\
+> &sum;<sub>h=0</sub><sup>log(N)</sup>[n/2<sup>h+1</sup> \* O(h)]
+> n\*&sum;<sub>h=0</sub><sup>log(N)</sup>[h/2h]
+> n*(1/2 + 2/4 + 3/8 + 4/16 + ... +)=
 > n*2=O(N)
+
+### Heap Insertion
+- We can easily find the next place to insert a node for satisfying the complete tree (rightmost null child on the last level)
+  - in the array implementation, this is the last element in the array
+- How do we reassert the heap property?
+
+### Heap Insertions Algorithm
+```C
+void minHeapInsert(int arr[], int n, int x) {
+  arr[n] = x;
+  int p = (n-1)/2;
+  while (n > 0 && arr[p] > arr[n]){// this operator determines min vs max heap
+    swap(&arr[p], &arr[n]);
+    n = p;
+    p = (n - 1)/2
+  }
+}
+
+void maxHeapInsert(int arr[], int n, int x) {
+  arr[n] = x;
+  int p = (n-1)/2;
+  while (n > 0 && arr[p] < arr[n]){// this operator determines min vs max heap
+    swap(&arr[p], &arr[n]);
+    n = p;
+    p = (n - 1)/2
+  }
+}
+```
+
+### Insert Runtime?
+- At worst, the ne node has to float to the top of the heap.
+- Since the binary tree is complete, the distance from the root node to the deepest leaf is always log(N)
+- At worst we have to do **O(log(N))** swaps
+
+## Heap Deletion
+- We need to maintain a complete binary tree.
+  - The bottom level rightmost leaf needs to be removed (ragardless of whih node is actually being deleted)!
+  - Swap the victim node's value with the node to be deleted
+  - Sift up or sift down depending on whether or not the node is greater or smaller than its new parent.
+
+### Runtime?
+- The swapped node has to float down at most log(N) times before becoming a leaf.
+- At worst, we have to do O(log(N)) swaps
