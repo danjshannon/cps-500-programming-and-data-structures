@@ -24,6 +24,9 @@
   - [Search](#bst-search)
   - [Insertion](#bst-insertion)
   - [Deletion](#bst-deletion)
+- [Heaps](#heaps)
+  - [Heapify](#heapify)
+  - [Heap Insert](#heap-insert)
 
 ## Sorting
 [top](#Algorithms-and-Data-Structures)
@@ -403,5 +406,72 @@ void removeNode(int value, TreeNode* node, TreeNode* parent) {
     } else if (parent->right == node) {
         parent->right = (node->left != NULL) ? node->left : node->right;
     }
+}
+```
+
+## Heaps
+[top](#algorithms-and-data-structures)
+### Heapify
+[top](#algorithms-and-data-structures)
+```C
+void buildHeap(int arr[], int n){
+  for(int i=(n-1)/2; i>=0; i--){ //(n-1)/2 is the deepest parent node
+    heapify(arr,n,2);
+  }
+}
+
+void maxHeapify(int arr[], int n, int i) {
+  int largest=i;
+  int left=2*i+1;
+  int right=2*i+2;
+  if(left < n && arr[left] > arr[largest]) { // if left is larger than root
+    largest = left;
+  }
+  if(right < n && arr[right] > arr[largest]) { // if right is larger than largest
+    largest = right;
+  }
+  if(largest != i){ // if largest is not root
+    swap(arr[i], arr[largest]);
+    maxHeapify(arr, n, largest); // Recursively heapify the sub-tree
+  }
+}
+
+void minHeapify(int arr[], int n, int i) {
+  int smallest=i;
+  int left=2*i+1;
+  int right=2*i+2;
+  if(left < n && arr[left] < arr[smallest]) { // if left is larger than root
+    smallest = left;
+  }
+  if(right < n && arr[right] < arr[smallest]) { // if right is larger than smallest
+    smallest = right;
+  }
+  if(smallest != i){ // if smallest is not root
+    swap(arr[i], arr[smallest]);
+    minHeapify(arr, n, smallest); // Recursively heapify the sub-tree
+  }
+}
+```
+### Heap Insert
+[top](#algorithms-and-data-structures)
+```C
+void minHeapInsert(int arr[], int n, int x) {
+  arr[n] = x;
+  int p = (n-1)/2;
+  while (n > 0 && arr[p] > arr[n]){// this operator determines min vs max heap
+    swap(&arr[p], &arr[n]);
+    n = p;
+    p = (n - 1)/2
+  }
+}
+
+void maxHeapInsert(int arr[], int n, int x) {
+  arr[n] = x;
+  int p = (n-1)/2;
+  while (n > 0 && arr[p] < arr[n]){// this operator determines min vs max heap
+    swap(&arr[p], &arr[n]);
+    n = p;
+    p = (n - 1)/2
+  }
 }
 ```
