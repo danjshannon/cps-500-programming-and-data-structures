@@ -10,7 +10,7 @@
 - [Week 5: Runtime Analysis](/async/week5_runtimeAnalysis/README.md#week-5-runtime-analysis)
 - [Week 6: Recursion](/async/week6_recursion/README.md#week-6-recursion)
 - [Week 7: Arrays, Lists, Queues, and Stacks](/async/week7_arrayListStackQueue/README.md#week-7-arrays-lists-queues-and-stacks)
-- [Week 8: Trees](/async/week7_arrayListStackQueue/README.md#week-7-array-list-queue-and-stack)
+- [Week 8: Trees](/async/week8_trees/README.md#week-8-trees)
 
 ### Algorithms and Data-Structures Table of Contents
 - [Algorithms and Data-Structures](/algorithms/README.md#Algorithms-and-data-structures)
