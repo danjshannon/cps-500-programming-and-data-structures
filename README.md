@@ -11,6 +11,7 @@
 - [Week 6: Recursion](/async/week6_recursion/README.md#week-6-recursion)
 - [Week 7: Arrays, Lists, Queues, and Stacks](/async/week7_arrayListStackQueue/README.md#week-7-arrays-lists-queues-and-stacks)
 - [Week 8: Trees](/async/week8_trees/README.md#week-8-trees)
+- [Week 9: Hash Tables](/async/week9_hashTables/README.md#week-9-hash-tables)
 
 ### Algorithms and Data-Structures Table of Contents
 - [Algorithms and Data-Structures](/algorithms/README.md#Algorithms-and-data-structures)
