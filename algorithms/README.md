@@ -241,6 +241,16 @@ void addHead(List *list, int value)
     list->head = node;
 }
 ```
+### RemoveNode
+[top](#algorithms-and-data-structures)
+```C
+void removeNode(ListNode *node)
+{
+    ListNode *next = node->next;
+    node->next = next->next;
+    free(next);
+}
+```
 ### Reverse Linked-List
 [top](#algorithms-and-data-structures)
 ```C
