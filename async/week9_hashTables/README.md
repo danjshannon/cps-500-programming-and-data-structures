@@ -354,7 +354,7 @@ h(9,5)=(h1(9)+5*h2(9))%6=4 //collision
 
 ### Growth
 - Notice that as &alpha;&rarr;1, 1/(1-&alpha;)&rarr;&infin;
-- so in open addressing we want &alpha;<<1
+- so in open addressing we want &alpha;&#226A;1
 
 ### Runtime?
 - runtime = O(1/(1-&alpha;))?
