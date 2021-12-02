@@ -189,7 +189,7 @@ int insert(HashTable* table, int key, int value){
   2. Quadratic probing
   3. Double hashing
 
-### Linear Probing
+## Linear Probing
 - in linear probing, we use a simple version of the hash key and then add i to the result modulo by N
   > h(k,i)=(h(k)+i)%N
 - modulo by N keeps h(k,i) in [0,N-1]
@@ -237,7 +237,7 @@ h(9,5)=(h(9)+5)%6=2
 
 ```
 
-### Qudradic Probing
+## Qudradic Probing
 - Quadratic probing uses a s hash funcion with two constants, c<sub>1</sub> and c<sub>2</sub>:
 > h(k,1)=(h(k) + c<sub>1</sub>i + c<sub>2</sub>i<sup>2</sup>) % m
 - It performs better than linear probing in practice, but still suffers from **secondary clustering**.
@@ -282,3 +282,82 @@ h(9,1)=(h(9)+2*1+3*1)%6=2 //collision
 h(9,2)=(h(9)+2*2+3*4)%6=1 //collision
 |6|9|3|15|12|5|
 ```
+
+### How to Choose c<sub>1</sub> and c<sub>2</sub>
+- how do you choose c1 and c2?
+- in the previous problem, N=6, what happens if c1=1 and c2=2?
+- h(x,i)=(h(x)+c<sub>1</sub>\*i+c<sub>2</sub>\*i<sup>2</sup>%N)
+- i=0: h(x)+1*0 +2*0=h(x)%6
+
+### Rules of Thumb
+- Set N=2<sup>k</sup>
+- Let c<sub>1</sub>=c<sub>2</sub>=&half;
+- Or
+- SetN to be Prime, then most c<sub>1</sub> and c<sub>2</sub> will work (but not all)
+
+## Double Hashing
+- Double Hashing uses two distinct hash functions (h1,h2) and combines the result linearly:
+> h(k,i)=(h<sub>1</sub>(k) + i*h<sub>2</sub>(k)) % N
+- this way, even if h(k1,0)=h(k2,0), it does not follow that h(k1,1)=h(k2,1)
+
+### Double Hashing Example
+- insert the following values
+  - 5,15,6,12,3,9
+```
+|x|x|x|x|x|x|
+N=6
+h1(x) = x%N
+h2(x) = 7 - x%7
+-----------------
+x=5
+h(5,0)=(h1(5)+0*h2(5))%6=5
+|x|x|x|x|x|5|
+
+x=15
+h(15,0)=(h1(15)+0*h2(15))%6=3
+|x|x|x|15|x|5|
+
+x=6
+h(6,0)=(h1(6)+0*h2(6))%6=0
+|6|x|x|15|x|5|
+
+x=12
+h(12,0)=(h1(12)+0*h2(12))%6=0 //collision
+h(12,1)=(h1(12)+1*h2(12))%6=2
+|6|x|12|15|x|5|
+
+x=3
+h(3,0)=(h1(3)+0*h2(3))%6=3 //collision
+h(3,1)=(h1(3)+1*h2(3))%6=1
+|6|1|12|15|x|5|
+
+x=9
+h(9,0)=(h1(9)+0*h2(9))%6=3 //collision
+h(9,1)=(h1(9)+1*h2(9))%6=2 //collision
+h(9,2)=(h1(9)+2*h2(9))%6=1 //collision
+h(9,3)=(h1(9)+3*h2(9))%6=0 //collision
+h(9,4)=(h1(9)+4*h2(9))%6=5 //collision
+h(9,5)=(h1(9)+5*h2(9))%6=4 //collision
+|6|1|12|15|9|5|
+```
+
+## Open Hashing Performance
+- Performance
+- Assume **uniform hashing**, we can defin perfomance in terms of the load &alpha; (&alpha;=m/n)
+- Notice that &alpha;&le;1 for open addressing.
+- Assuming **uniform hashing**.
+  - we always make the first probe O(1)
+  - The probability that the first probe (ie h(k,0)) is occupied is &alpha;
+  - We conditionally make the second probe the probability that is **and** the first probe are occupied (h(k,0) and h(k,1))=&alpha;*&alpha;=&alpha;<sup>2</sup>
+  - What is the probability that the third is occupied as well: &alpha;<sup>3</sup>
+  > 1+&alpha;+&alpha;<sup>2</sup>+&alpha;<sup>3</sup>+... = O(1/(1-&alpha;))
+
+### Growth
+- Notice that as &alpha;&rarr;1, 1/(1-&alpha;)&rarr;&infin;
+- so in open addressing we want &alpha<<1
+
+### Runtime?
+- runtime = O(1/(1-&alpha;))?
+- if we can keep half of the table empty, n=2*m. 
+  - Then &alpha;=m/n=m/2m=1/2.
+- &alpha;<0.5:  O(1/(1-&alpha;))=O(1)
