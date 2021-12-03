@@ -3,6 +3,7 @@
 - [9.1 Introduciton](#91-Introduction)
 - [9.2 Chained Hash Tables](#92-chained-hash-tables)
 - [9.3 Open Addressing](#93-open-addressing)
+- [9.4 Problem-Solving With Hash Tables](#94-problem-solving-with-hash-tables)
 ## 9.1 Introduction
 [top](#Week-9-Hash-Tables)
 
@@ -361,3 +362,36 @@ h(9,5)=(h1(9)+5*h2(9))%6=4 //collision
 - if we can keep half of the table empty, n=2*m. 
   - Then &alpha;=m/n=m/2m=1/2.
 - &alpha;<0.5:  O(1/(1-&alpha;))=O(1)
+
+## 9.4 Problem Solving With Hash Tables
+[top](#week-9-hash-tables)
+### Hash Table Applications
+### Pair Sum Problem
+- given an array of integers, A, and a value, X, determine if there is a pair of indices, i and j, in A such that A[i]+A[j]=X.
+
+#### Brute Force Approach
+```C
+for(int i=0;i<N;i++){
+    for(int j=0;j<N;j++){
+        if(A[i]+A[j]==X){
+            return i;
+        }
+    }
+}
+return 0;
+```
+- O(N<sup>2</sup>) runtime :(
+
+#### Hash Table Solution
+```
+HashTable h;
+for(int i=0;i<N;i++){
+    int left = x-A[i];
+    if(contains(&h, left)){
+        return 1;
+    }
+    insert(&h,A[i]);
+}
+```C
+- inserting and searching the hash table are O(1) operations
+- N times for O(N) runtime
