@@ -27,6 +27,12 @@
 - [Heaps](#heaps)
   - [Heapify](#heapify)
   - [Heap Insert](#heap-insert)
+- [Hash Tables](#hash-tables)
+  - [Chained Hash Table](#chained-hash-table)
+    - [Insertion](#chained-hash-table-insertion)
+  - [Probed Hash Table](#probed-hash-table)
+    - [Insertion](#probed-hash-table-insertion)
+  - [Pair Sum Problem](#pair-sum-problem)
 
 ## Sorting
 [top](#Algorithms-and-Data-Structures)
@@ -288,12 +294,76 @@ void traverse(List *list)
 ## Queue
 [top](#algorithms-and-data-structures)
 ```C
-//Coming soon
+typedef struct queue
+{
+    ListNode *head;
+    ListNode *tail;
+} Queue;
+
+void enqueue(Queue *queue, int value)
+{
+
+    //Create a new node to hold value.
+    ListNode *node = malloc(sizeof(ListNode));
+    //Assign the data to the value
+    node->data = value;
+    if (queue->head == NULL)
+    {
+        queue->head = node;
+        queue->tail = node;
+    }
+    else
+    {
+        queue->tail->next = node; // point tail to node pointer
+        queue->tail = node;       // point tail to node (which points to NULL)
+    }
+}
+
+// just like list listPop - from the head
+int dequeue(Queue *queue)
+{
+    if (queue->head != NULL)
+    {
+        ListNode *head = queue->head;
+        ListNode *next = head->next;
+        queue->head = next;
+        int data = head->data;
+        //free(head);
+        return data;
+    }
+}
 ```
 ## Stack
 [top](#algorithms-and-data-structures)
 ```C
-//Coming soon
+typedef struct stack
+{
+    ListNode *head;
+} Stack;
+
+void push(Stack *stack, int value)
+{
+    //Create a new node to hold value.
+    ListNode *node = malloc(sizeof(ListNode));
+    //Assign the data to the value
+    node->data = value;
+    //Assign the next element to the head.
+    node->next = stack->head; // whatever list->head points to, point node->next to the same thing
+    //assign the head of the list to the node
+    stack->head = node;
+}
+
+int pop(Stack *stack)
+{
+    if (stack->head != NULL)
+    {
+        ListNode *head = stack->head;
+        ListNode *next = head->next;
+        stack->head = next;
+        int data = head->data;
+        return data;
+    }
+}
 ```
 
 ## Binary Tree
@@ -486,3 +556,91 @@ void maxHeapInsert(int arr[], int n, int x) {
 }
 ```
 
+## Hash Tables
+### Chained Hash Table
+[top](#algorithms-and-data-structures)
+```C
+struct HashNode{
+    int key;
+    int value;
+    struct HashNode* next;
+};
+
+struct ChainedHashTable{
+    HashNode** array; // array of pointers to HashNode*
+    int N; // size of table
+};
+```
+
+### Chained Hash Table Insertion
+[top](#algorithms-and-data-structures)
+```C
+int insert(ChainedHashTable* table, int key, int value){
+    int index=h(key);
+    HashNode* front = table->array[index];
+    HashNode* prev = NULL;
+    while(front!=NULL){
+        if(fron->key==key){
+            return 0;
+        }
+        prev=front;
+        front=front->next;
+    }
+    HashNode* node=malloc(sizeof(HashNode));
+    node->next=NULL;
+    node->key=key;
+    node->value=value;
+    if(prev==NULL){
+        table->array[index]=node;
+        return 1;
+    }
+    prev->next=node;
+    return 1;
+}
+```
+
+### Probed Hash Table
+[top](#algorithms-and-data-structures)
+```C
+typedef struct HashNode{
+    int key;
+    int value;
+} HashNode;
+typedef struct HashTable{
+    HashNode** array;
+    int size;
+}
+```
+
+### Probed Hash Table Insertion
+[top](#algorithms-and-data-structures)
+```C
+int insert(HashTable* table, int key, int value){
+    for(int i=0; i<table->size; i++){
+        int index = h(value,i);
+        if(array[index]==NULL){
+            array[index]=malloc(sizeof(HashNode));
+            array[index]->key=key;
+            array[index]->value=value;
+            return 1;
+        }else if(array[key]==key){
+            return 0;
+        }
+    }
+    return 0;
+}
+```
+
+### Pair Sum Problem
+[top](#algorithms-and-data-structures)
+> Given an array of integers, A, and a value, X, determine if there is a pair of indices, i and j, in A such that A[i]+A[j]=X.
+```C
+HashTable h;
+for(int i=0;i<N;i++){
+    int left = x-A[i];
+    if(contains(&h, left)){
+        return 1;
+    }
+    insert(&h,A[i]);
+}
+```

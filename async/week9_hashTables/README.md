@@ -383,7 +383,7 @@ return 0;
 - O(N<sup>2</sup>) runtime :(
 
 #### Hash Table Solution
-```
+```C
 HashTable h;
 for(int i=0;i<N;i++){
     int left = x-A[i];
