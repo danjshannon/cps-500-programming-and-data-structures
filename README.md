@@ -22,3 +22,4 @@
   - [Stack](/algorithms/README.md#Stack)
   - [Binary Tree](/algorithms/README.md#Binary-tree)
   - [Heaps](/algorithms/README.md#heaps)
+  - [Hash Tables](/algorithms/README.md#hash-tables)
