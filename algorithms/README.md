@@ -399,8 +399,8 @@ void inOrder (TreeNode* node){
 void preOrder (TreeNode* node){
     if(node==NULL) return;
     visit(node);
-    inOrder(node->left);
-    inOrder(node->right);
+    preOrder(node->left);
+    preOrder(node->right);
 }
 ```
 
@@ -409,8 +409,8 @@ void preOrder (TreeNode* node){
 ```C
 void postOrder (TreeNode* node){
     if(node==NULL) return;
-    inOrder(node->left);
-    inOrder(node->right);
+    postOrder(node->left);
+    postOrder(node->right);
     visit(node);
 }
 ```
@@ -496,7 +496,7 @@ void removeNode(int value, TreeNode* node, TreeNode* parent) {
 ```C
 void buildHeap(int arr[], int n){
   for(int i=(n-1)/2; i>=0; i--){ //(n-1)/2 is the deepest parent node
-    heapify(arr,n,2);
+    heapify(arr,n,i);
   }
 }
 
@@ -520,10 +520,10 @@ void minHeapify(int arr[], int n, int i) {
   int smallest=i;
   int left=2*i+1;
   int right=2*i+2;
-  if(left < n && arr[left] < arr[smallest]) { // if left is larger than root
+  if(left < n && arr[left] < arr[smallest]) { // if left is less than root
     smallest = left;
   }
-  if(right < n && arr[right] < arr[smallest]) { // if right is larger than smallest
+  if(right < n && arr[right] < arr[smallest]) { // if right is less than smallest
     smallest = right;
   }
   if(smallest != i){ // if smallest is not root

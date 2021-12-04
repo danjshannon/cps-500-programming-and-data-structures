@@ -330,7 +330,7 @@ rotation...
 ```C
 void buildHeap(int arr[], int n){
   for(int i=(n-1)/2; i>=0; i--){ //(n-1)/2 is the deepest parent node
-    heapify(arr,n,2);
+    heapify(arr,n,i);
   }
 }
 
