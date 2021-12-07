@@ -12,7 +12,7 @@
 - [Week 7: Arrays, Lists, Queues, and Stacks](/async/week7_arrayListStackQueue/README.md#week-7-arrays-lists-queues-and-stacks)
 - [Week 8: Trees](/async/week8_trees/README.md#week-8-trees)
 - [Week 9: Hash Tables](/async/week9_hashTables/README.md#week-9-hash-tables)
-
+- [Week 10: Graphs](/async/week10_graphs/README.md#week-10-graphs)
 ### Algorithms and Data-Structures Table of Contents
 - [Algorithms and Data-Structures](/algorithms/README.md#Algorithms-and-data-structures)
   - [Sorting](/algorithms/README.md#Sorting)
