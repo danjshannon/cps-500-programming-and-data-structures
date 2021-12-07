@@ -35,13 +35,7 @@
 - **path** a series of vertices such that they are pairwise connected by edges
   - {e,d,c,a} is a path on the right
   - {b,e,d} is not a path on the right
-```
-a<--->c    
-|     ^     |--|
-V     |     V  |
-b---->d<----e--|
-```
-![Graph 1](./graph1.png)
+  <img src="./graph1.png" alt="graph 1" width="200"/>
 - **cycle** a path that returns to its starting node.
   - {a,b,d,c,a} is a cycle
 - node e has a **reflexive** edge
