@@ -126,3 +126,85 @@ typedef struct Graph{
   1. Add j to the stack
   2. Mark it as explored
 7. Repeat steps 3-6
+
+### DFS Algorithm
+```C
+void dfs(Graph * graph){
+    int visited[graph->N];
+    for(int i =0; i<graph->N;i++){//need this loop for unconnected graphs
+        if(!visited[i]){
+            visited[i]=1;
+            dfs_util(graph,i,visited);
+        }
+    }
+}
+```
+### DFS Util
+```C
+void dfs_util(Graph* graph, int node, int* visited){
+    visit(node);
+    GraphNode* front = graph->array[node];
+    while (front!=NULL){
+        if(!visited[front->dest]){
+            visited[front->dest]=1;
+            dfs_util(graph,front->dest,visited);
+        }
+        front = front->next;
+    }
+}
+```
+
+### Restarting?
+- Notice that we only called dfs_util from dfs once. (dfs_util was called many times from itself)
+- The graph was connected an undirected.
+- A directed graph might not have a path from our starting node to all other nodes.
+- in this case, we need to restart the exploration
+
+### Alternative DFS
+- We can alos implement DFS using a stack.
+- Seed the stack with a starting node.
+- Instead of recursiely calling dfs_util on nodes, push the neighbors onto the stack
+- iterate until the stack is empty by removing a node at each iteration
+
+### Breadth-First Seach
+- Breadth-first search (BFS) visits all of the sibling nodes before visiting children
+- The stack implmentation of DFS is extremely similar to the BFS implementation, except that BFS uses a queue.
+
+### BFS Algorithm
+```C
+void bfs(Graph * graph){
+    int visited[graph->N];
+    for(int i =0; i<graph->N;i++){//need this loop for unconnected graphs
+        if(!visited[i]){
+            visited[i]=1;
+            bfs_util(graph,i,visited);
+        }
+    }
+}
+```
+### BFS Util
+```C
+void bfs_util(Graph* graph, int node, int* visited){
+    Queue q;
+    enqueue(&q,node);
+    while(!isEmpty(&q)){
+        int node=dequeue(&q);
+        GraphNode* front = graph->array[node];
+        while(front!=NULL){
+            if(!visited[front->dest]){
+                visited[front->dest]=1;
+                enqueue(&queue, front->dest);
+            }
+            front =front->next;
+        }
+    }
+}
+```
+
+### BFS vs DFS
+- Both need potential restarts.
+- Both have O(|V|+|E|) runtimes
+- DFS goes far away from the starting node.
+- BFS goes out methodically layer by layer.
+- Which is right?
+  - Depends on your use case.
