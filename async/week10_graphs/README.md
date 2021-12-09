@@ -3,6 +3,7 @@
 - [10.1 Introduction to Graphs](#101-Introduction-To-Graphs)
 - [10.2 Graph Representations](#102-graph-representations)
 - [10.3 Graph Traversals](#103-graph-traversals)
+- [10.4 Shortest Paths](#104-shortest-paths)
 
 
 ## 10.1 Introduction to Graphs
@@ -208,3 +209,57 @@ void bfs_util(Graph* graph, int node, int* visited){
 - BFS goes out methodically layer by layer.
 - Which is right?
   - Depends on your use case.
+
+## 10.4 Shortest Paths
+[top](#week-10-graphs)
+### Single-Source Shortest Path
+- Find the shortest paths to all target nodes from a givn source.
+- There are variations:
+  - **single-destination shortest path** find the shortest path from all nodes to a given point.
+  - **all-pairs shortest path** find the shortest path between all pairs of nodes.
+
+### Example
+- find the shortest path from A to all other nodes
+<img src="./graph5.png" width="200"/>
+- There's a possibility that A cannot get to do.
+  
+  - D is a **source node**
+    - Distance from A to D is &infin;
+    - a node with no incoming edges
+  - E is a **sink node**
+    - a node with no outgoing edges
+- There can be sink nodes that a path cannot reach
+
+### Dijkstra's Algorithm
+1. Start off by assuming that the distance is infinite from A to all other nodes.
+2. Mark all nodes as unvisited
+3. Select the closes unvisited neighbor.
+4. Visit all neighbors of the current node, and take the smaller of the existing distance and the path through each neighbor.
+5. Remove the current node from the unvisited set once all the neighbors are visited.
+
+### Algorithms
+```C
+int * dijkstra(Graph* g, int source){
+    int dist[g->N];
+    for(int i = 0; i<N;++i){
+        dist[i]=-1; //infinity
+    }
+    dist[source]=0;
+    MinHeap *h=makeHeap(dist);
+    while (!isEmpty(h)){
+        int next=removeMin(h);
+        GraphNode* front = g->adjList[next];
+        while(front!=NULL){
+            int adj = front->dest;
+            int alt=dist[next]+front->weight;
+            if(alt<dist[adj]||dist[adj]<0){
+                dist[adj]=alt;
+                decreaseValue(h,adj,alt);
+            }
+        }
+    }
+}
+```
+
+### Shortest Path Example
+<img src="./graph6.png" alt="dijkstra example" width="200"/>
