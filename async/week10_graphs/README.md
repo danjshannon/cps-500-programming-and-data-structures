@@ -4,6 +4,7 @@
 - [10.2 Graph Representations](#102-graph-representations)
 - [10.3 Graph Traversals](#103-graph-traversals)
 - [10.4 Shortest Paths](#104-shortest-paths)
+- [10.5 Minimum Spanning tree](#105-minimum-spanning-tree)
 
 
 ## 10.1 Introduction to Graphs
@@ -263,3 +264,66 @@ int * dijkstra(Graph* g, int source){
 
 ### Shortest Path Example
 <img src="./graph6.png" alt="dijkstra example" width="200"/>
+<img src="./graph7.png" alt="dijkstra example completed" width="200"/>
+
+### Performance
+- Time to make the heap is O(|V|)
+- Reasserting the heap is log(|V|)
+- total time is O((|E|+|V|)*log(|V|))
+- Note: Would the previous algorithm work with negative edge weights?
+  - greedy algorithm
+
+## 10.5 Minimum Spanning Tree
+[top](#week-10-graphs)
+### Problem Definition
+- **minimum spanning tree** Given a connected, undirected, weighted graph, find a subset of edges that:
+  - Has a minimum weight subject to other constraints
+  - Connects all edges (remains connected)
+  - Has no cycles
+- We can relax the connected requirement and find a set of trees for each onnected component called a **minimum spanning forest**
+
+### Prim's Algorithm
+- Prim's algorithm is a **greedy algorithm** that works by continuously selecting the cheapest edge to add to the minimum spanning tree
+1. Initialize tree sets: reached (empty), unreached (all nodes), minimumSpanningTree (empty)
+2. Choose an arbitrary node to start/seed the tree and move from unreached to reached
+3. Select the minimum edge, e=(x,y) that connects a node, x, in the reached set of nodes to a node, y, in the unreached set of nodes
+4. Add e to the minimum spanning tree
+5. Move y from the unreached set to the reached set
+6. Repeat steps 3-5 until the unreached set is empty
+
+### Algorithm
+```C
+void prims(Graph*g){
+    int cost[g->N];
+    for (int i =0; i< g->N;i++) cost[i]=-1;//infinity
+    cost[0]=0;
+    MinHeap * h = makeHeap(cost);
+    while(!isEmpty(h)){
+        int min = removeMin(h);
+        GraphNode* front = g->adjList
+        while(front!=NULL){
+            int adj = front->dest;
+            if(cost[adj]>front->weight){
+                cost[adj]=front->weight;
+                decreaseKey(h,adj,front->weight);// decrease the key in the heap
+            }
+        }
+    }
+    
+}
+```
+
+### Minimum Spanning Tree Example
+<img src="./graph8.png" alt="prim's example" width="200"/>
+
+- arbitrarily pick one node and set that distance to 0
+- everyting else is &infin;
+
+<img src="./graph9.png" alt="prim's example complete" width="200"/>
+
+- all of the nodes are still connected!
+- This is the minimum spanning tree, so there are other spanning trees that have a longer/higher distance
+
+### Perfomance
+- notice the similarity to Dijkstra's algorithm
+- In fact, the two algorithms have the same runtime complexity to **O((|E|+|V|)*(log(|V|)))**
