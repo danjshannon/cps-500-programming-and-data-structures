@@ -33,6 +33,13 @@
   - [Probed Hash Table](#probed-hash-table)
     - [Insertion](#probed-hash-table-insertion)
   - [Pair Sum Problem](#pair-sum-problem)
+- [Graphs](#graphs)
+  - [Adjacency List](#adjacency-list)
+  - [Depth-First Search](#depth-first-search-graph)
+  - [Breadth-First Search](#breadth-first-search-graph)
+  - [Dijkstra's Algorithm](#dijkstras-algorithm)
+
+
 
 ## Sorting
 [top](#Algorithms-and-Data-Structures)
@@ -642,5 +649,126 @@ for(int i=0;i<N;i++){
         return 1;
     }
     insert(&h,A[i]);
+}
+```
+
+## Graphs
+[top](#algorithms-and-data-structures)
+### Adjacency List
+[top](#algorithms-and-data-structures)
+```C
+typedef struct Edge{
+    int dest;
+    struct Edge*next;
+} Edge;
+typedef struct Graph{
+    int N;
+    struct Edge** adj_ist;
+}
+```
+
+### Depth First Search (Graph)
+[top](#algorithms-and-data-structures)
+```C
+void dfs(Graph * graph){
+    int visited[graph->N];
+    for(int i =0; i<graph->N;i++){//need this loop for unconnected graphs
+        if(!visited[i]){
+            visited[i]=1;
+            dfs_util(graph,i,visited);
+        }
+    }
+}
+```
+```C
+void dfs_util(Graph* graph, int node, int* visited){
+    visit(node);
+    GraphNode* front = graph->array[node];
+    while (front!=NULL){
+        if(!visited[front->dest]){
+            visited[front->dest]=1;
+            dfs_util(graph,front->dest,visited);
+        }
+        front = front->next;
+    }
+}
+```
+
+### Breadth First Search (Graph)
+[top](#algorithms-and-data-structures)
+```C
+void bfs(Graph * graph){
+    int visited[graph->N];
+    for(int i =0; i<graph->N;i++){//need this loop for unconnected graphs
+        if(!visited[i]){
+            visited[i]=1;
+            bfs_util(graph,i,visited);
+        }
+    }
+}
+```
+```C
+void bfs_util(Graph* graph, int node, int* visited){
+    Queue q;
+    enqueue(&q,node);
+    while(!isEmpty(&q)){
+        int node=dequeue(&q);
+        GraphNode* front = graph->array[node];
+        while(front!=NULL){
+            if(!visited[front->dest]){
+                visited[front->dest]=1;
+                enqueue(&queue, front->dest);
+            }
+            front =front->next;
+        }
+    }
+}
+```
+
+### Dijkstra's Algorithm
+[top](#algorithms-and-data-structures)
+```C
+int * dijkstra(Graph* g, int source){
+    int dist[g->N];
+    for(int i = 0; i<N;++i){
+        dist[i]=-1; //infinity
+    }
+    dist[source]=0;
+    MinHeap *h=makeHeap(dist);
+    while (!isEmpty(h)){
+        int next=removeMin(h);
+        GraphNode* front = g->adjList[next];
+        while(front!=NULL){
+            int adj = front->dest;
+            int alt=dist[next]+front->weight;
+            if(alt<dist[adj]||dist[adj]<0){
+                dist[adj]=alt;
+                decreaseValue(h,adj,alt);
+            }
+        }
+    }
+}
+```
+
+### Prim's Algorithm
+[top](#algorithms-and-data-structures)
+```C
+void prims(Graph*g){
+    int cost[g->N];
+    for (int i =0; i< g->N;i++) cost[i]=-1;//infinity
+    cost[0]=0;
+    MinHeap * h = makeHeap(cost);
+    while(!isEmpty(h)){
+        int min = removeMin(h);
+        GraphNode* front = g->adjList
+        while(front!=NULL){
+            int adj = front->dest;
+            if(cost[adj]>front->weight){
+                cost[adj]=front->weight;
+                decreaseKey(h,adj,front->weight);// decrease the key in the heap
+            }
+        }
+    }
+    
 }
 ```
