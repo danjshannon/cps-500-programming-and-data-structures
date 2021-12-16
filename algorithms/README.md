@@ -630,7 +630,7 @@ int insert(HashTable* table, int key, int value){
             array[index]->key=key;
             array[index]->value=value;
             return 1;
-        }else if(array[key]==key){
+        }else if(array[index]->key==key){
             return 0;
         }
     }
