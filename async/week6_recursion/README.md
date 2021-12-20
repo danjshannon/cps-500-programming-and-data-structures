@@ -228,8 +228,8 @@ int binarySearch(int * array, int value, int lo, int hi){
     }
 }
 ```
-- Work to break problem up - O(n)
-- Work to combine results - tail recursive O(n)
+- Work to break problem up - O(1)
+- Work to combine results - tail recursive O(1)
 - Number of recursive calls? O(log(n))
   - N/2<sup>k</sup>...2<sup>k</sup>=N...k=log<sub>2</sub>N
 
