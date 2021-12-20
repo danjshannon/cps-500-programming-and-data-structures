@@ -52,9 +52,7 @@ typedef struct tree{
 - The ordering a tree imposes is somewhat subjective.
 - A list or an array has a well-defined ordering.
 - How can we impose a strict ordering on trees?
-  - 
 - How can we visit all of the nodes in a disciplined way?
-  - 
 
 ### Depth-First Search
 ```C
